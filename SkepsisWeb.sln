@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkepsisWeb", "SkepsisWeb\SkepsisWeb.csproj", "{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E94A6FC4-1537-4887-8FA6-A4C501434552}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

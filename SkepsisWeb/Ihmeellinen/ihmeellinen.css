@@ -1,0 +1,17 @@
+body {
+	margin-right: 100px;
+	background: url("sidebar.png") white;
+	background-repeat: repeat-y;
+	background-position: right;
+	background-attachment: fixed;
+}
+
+@media print {
+body {
+	margin-right: 0;
+	background: white;
+}
+.nonprint {
+	display: none;
+}
+}

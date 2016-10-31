@@ -1,0 +1,12 @@
+﻿@using SkepsisWeb.Helpers
+@model SkepsisWeb.Models.Prize
+
+<div class="row">
+    <div class="col-md-12 text-left data">
+        <h2 style="text-align: center">@Model.HuuhaaPrizeLead</h2>
+        <h1 style="text-align:center; padding: 20px 0">@Model.HuuhaaPrizeTitle</h1>
+        <h2 style="text-align: center; padding-top: 0; padding-bottom: 13px">@Model.HuuhaaPrizeSubTitle</h2>
+        <p style="padding-top: 20px">@Html.FormatBody(Model.HuuhaaPrizeText)</p>
+    </div>
+</div>
+

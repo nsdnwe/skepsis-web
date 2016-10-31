@@ -1,0 +1,8 @@
+﻿@using SkepsisWeb.Helpers
+@model SkepsisWeb.Models.Prize
+
+@{
+    ViewBag.Title = "Huuhaa-palkinto " + Model.PrizeID;
+}
+
+@Html.Partial("_HuuhaaPrize", Model)

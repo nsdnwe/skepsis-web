@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SkepsisWeb.Models.PublicEvent>
+@using SkepsisWeb.Helpers
+
+@{
+    ViewBag.Title = "Tapahtumat";
+}
+<h1>Uutiset</h1>
+<div class="row">
+    <div class="col-md-12 text-left data">
+        @foreach (SkepsisWeb.Models.PublicEvent item in Model) {
+            <div>
+                <h2>@item.EventDatetime.ToString("dd.MM.yyyy") @item.Title <br/><i>@item.City</i></h2> 
+                <p>@Html.FormatBody(item.Ingress)</p>
+                <div style="margin-bottom:10px"></div>
+            </div>
+        }
+    </div>
+</div>

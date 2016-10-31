@@ -1,0 +1,16 @@
+﻿@using SkepsisWeb.Helpers
+@model SkepsisWeb.ViewModels.LastPrizesViewModel
+
+@{
+    ViewBag.Title = "Huuhaa- ja Sokrates palkinnot";
+}
+<div class="row">
+    <div class="col-md-12 text-left data">
+        <p>
+            Skepsis ry palkitsee vuosittain pseudotieteen aseman vakiinnuttamisessa kunnostautuneita Huuhaa-palkinnolla. Vastapainoksi Huuhaa-palkinnolle perustettiin 1995 Sokrates-palkinto, joka voidaan antaa tunnustuksena Skepsiksen toimenkuvaan kuuluvien asioiden ja sokraattisen rationaalisen ajattelun edist&auml;misest&auml;.
+        </p>
+        @Html.Partial("_HuuhaaPrize", Model.HuuhaaPrize)
+        <br/>
+        @Html.Partial("_SokratesPrize", Model.SokratesPrize)
+    </div>  
+</div>

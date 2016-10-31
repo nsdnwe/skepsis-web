@@ -1,0 +1,56 @@
+﻿
+/* Vanhojen Skeptikkojen legacy - ÄLÄ KÄYTÄ */
+
+@import "main.css";
+
+body {
+	margin: 0 0 0 0;
+	padding: 0 13em 0 1em;
+}
+ul.menu {
+	font-size: small;
+	list-style-type: none;
+	line-height: 1.1;
+	position: fixed;
+	top: 0;
+	right: 1em;
+	width: 12em;
+}
+ul.menu li {
+	list-style-type: none;
+	padding: 0.25em 0 0.25em 0.25em;
+	border-left: 1em solid #A0A0A0;
+}
+ul.menu a { text-decoration: none; }
+
+/* This rather heroic (medical sense) code brings back from the dead
+ * IE fixed menu functionality, from http://devnull.tagsoup.com/fixed/
+ */
+
+* html {
+	overflow-y: hidden;
+}
+* html body {
+	overflow-y: auto;
+	height: 100%;
+	font-size: 100%;
+	margin: 0 0 0 0;
+	padding: 1em 12em 1em 1em;
+}
+* html ul.menu {
+	position: absolute;
+	top: 1em;
+	right: 2em;
+}
+
+@media print {
+body {
+	padding: 0 0 0 0;
+}
+* html body {
+	padding: 0 0 0 0;
+}
+.menu {
+	display: none;
+}
+}

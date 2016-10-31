@@ -1,0 +1,333 @@
+
+/*----------------------------------------------
+    Special styles
+------------------------------------------------*/
+body {
+   font-family: Arial, Helvetica, Sans-Serif;
+	background-image: url(../../img/Bottom_texture.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: top left;
+}
+
+ #wrapper {
+    width: 100%;
+   text-align:center;
+}
+
+.container {
+	max-width:900px;
+	background:white;
+	border-radius:10px;
+	padding:1px 5px 5px 5px;
+	margin-top:3px;
+    margin-bottom: 10px;
+}
+
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.text-center {
+    text-align:center;
+}
+.no-boder {
+    border:1px solid #f3f3f3;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+margin-top: 7px;
+margin-bottom: -5px;
+}
+h1
+{
+  font-size: 22px;
+  color: #ad7900;
+  font-weight: bold;padding-bottom: 20px;}
+
+h2, h4 {
+    padding-top:10px;
+	font-size:16px;
+	font-weight:bold;
+	color: #ad7900 !important;
+}
+.square-btn-adjust {
+    border: 0px solid transparent; 
+   -webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+
+}
+img{width:100%;}
+img.footimg1{width:100px;height:38px;padding-left:0px;}
+img.footimg2{width:140px;height:48px;}
+.lang{font-size:12px;}
+.second{padding-right:30px;}
+.second p{padding-top: 0px;}
+.second h4{ padding-top:5px;}
+.second ul{padding-top:50px;}
+.social{padding-top:20px;padding-bottom:10px;}
+.social a{color:#46534F;}
+.data ul {
+    padding-top: 8px;
+}
+.data ul li{background-image: url(../img/postbullets.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    margin-left: -14px;
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 16px;
+    color: #38423F;
+}
+.data .secondul{padding-top:50px;}
+
+.data2 ul li{
+    padding-left: 0px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 16px;
+    color: #38423F;
+    padding-bottom:8px;
+}
+
+.data2 li{
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 16px;
+    color: #38423F;
+}
+
+
+a{
+	color:#AD7900;
+	text-decoration:none;
+}
+.menu a{color:black;}
+.navbar-nav > li > a:hover{background-color:#8A9C95;}
+a:hover{text-decoration:none;}
+/*----------------------------------------------
+   DASHBOARD STYLES    
+------------------------------------------------*/
+header {
+margin-top:3px;
+margin-bottom:20px;
+
+
+
+
+}
+header .top{height: 100px;
+    background-image: url(../../img/header.jpg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-repeat-y: no-repeat;
+    background-size: cover;}
+header .menu{
+    height:30px;
+    background:#F6F0BF;
+    border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+
+}
+footer{
+	
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    width: 100%;
+	background:#FFC94B;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+.foot-text{
+    padding-top:13px;
+    padding-bottom: 3px;
+}
+footer p{
+    font-size: 10px;
+    min-height: 3px;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    line-height: 3px;
+}
+/*----------------------------------------------
+    MENU STYLES    
+------------------------------------------------*/
+
+/*----------------------------------------------
+    UI ELEMENTS STYLES     
+------------------------------------------------*/
+.btn-circle {
+width: 50px;
+height: 50px;
+padding: 6px 0;
+ -webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+text-align: center;
+font-size: 12px;
+line-height: 1.428571429;
+}
+
+/*----------------------------------------------
+    MEDIA QUERIES     
+------------------------------------------------*/
+ 
+ @media(min-width:768px) {
+     #page-wrapper{
+               margin: 0 0 0 260px;
+        padding: 15px 30px;
+        min-height: 1200px;
+		
+    }
+	
+    .navbar-side {
+        z-index: 1;
+        position: absolute;
+        width: 260px;
+    }
+	#main-menu{display:block !important;}
+   .navbar {
+ border-radius: 0px; 
+   }
+.menu-separator {
+    display: block;
+    margin: 0 auto;
+    width: 1px;
+    height: 28px;
+    background-image: url(../../img/menuseparator.png);
+ }	
+ .lang{margin-right:-100px;}
+ .footimg1{margin-left:-50px;}
+}
+/*@media(min-width:480px and max-width:765px)
+{
+.footimg2{float:left !important;}
+.lang{float:left !important;}
+.top-navbar .nav > li{width:100%;}
+.container{width:90%;}
+.menu{width:100%;}
+.menu-separator {
+display: none;}
+
+}*/
+ @media(max-width:480px) {
+.page-header small {
+display: block;
+padding-top: 14px;
+font-size: 19px;
+}
+.menu-separator {
+display: none;}
+
+
+.top-navbar .nav > li{width:100%;}
+.container{width:90%;}
+.menu{width:100%;}
+
+}
+
+
+   
+ .nav > li > a {
+  padding-top: 3px;
+  padding-bottom:3px;
+}
+
+ @media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+        padding-top:1px;
+    }
+}
+
+ .menu-separator {
+    height: 23px;
+ }
+
+ .dropdown-menu > li > a {
+  padding: 0px 20px;
+  text-align: left;
+}
+
+ .dropdown-menu {
+  padding: 10px 0;
+}
+
+ .navbar-brand {
+  padding: 20px 5px;
+}
+
+ .row {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+ .collapse {
+  display: initial;
+}
+
+ .navbar-nav > li > a:hover{background-color: initial;}
+
+p {
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 10px;
+    color: #38423F;
+}
+
+h1 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.second h4 {
+    padding-top: 2px; 
+}
+
+.row {
+    margin-bottom: 20px;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #ffffff; 
+  text-decoration: none;
+  background-color: #ffb403;
+}
+
+.dropdown-menu .sub-menu {
+    font-size:12px;
+    padding-left: 15px;
+    padding-top: 7px;
+}
+
+dd {
+    margin-bottom: 10px;
+}
+
+
+.data3 dt{
+    margin: 0px;
+    padding: 0;
+}
+
+.data3 dd{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+

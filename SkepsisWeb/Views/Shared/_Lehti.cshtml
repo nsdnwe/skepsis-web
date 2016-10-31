@@ -1,0 +1,46 @@
+﻿@model SkepsisWeb.ViewModels.MagazineViewModel
+@using SkepsisWeb.Helpers
+
+
+<div class="row">
+    <div class="col-md-12 text-left data">
+        <table border="0" style="width: 100%">
+            <tr>
+                <td style="border: none; " colspan="2">
+                    <h1>Skeptikko @Model.Magazine.MagazineID</h1>
+                </td>
+            </tr>
+            @if (Model.Magazine.PublicPdf && !string.IsNullOrEmpty(Model.Magazine.MagazinePdfFileUrl)) {
+                <tr>
+                    <td style="border:none; text-align: center" colspan="2">
+                        <a href="@Model.Magazine.MagazinePdfFileUrl" target="_blank">&raquo; PDF lehti</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td style="border: none; width: 300px; padding-top: 20px">
+                    <img src="@Model.Magazine.MagazineCoverImageUrl" style="max-width: 300px; " />
+                </td>
+                <td style="border: none; vertical-align: top; padding-left: 20px; padding-top: 20px">
+                    <ul>
+                        @foreach (var item in Model.MagazineArticles) {
+                            <li>
+                                <span style="font-weight: bold">@item.Author</span>
+                                @if (!string.IsNullOrEmpty(item.Author)) {
+                                    <span>:</span>
+                                }
+                                @if (!@Model.Magazine.PublicPdf && !string.IsNullOrEmpty(item.PdfFile)) {
+                                    <span><a href="@item.PdfFile" target="_blank">@item.Title</a></span>
+                                } else {
+                                    <span style="">@item.Title</span>
+                                }
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<SkepsisWeb.Models.Prize>
+@using SkepsisWeb.Helpers
+
+@{
+    ViewBag.Title = "Huuhaa-palkinnot";
+}
+@foreach (SkepsisWeb.Models.Prize item in Model) {
+    @Html.Partial("_HuuhaaPrize", item)
+    <hr />
+}

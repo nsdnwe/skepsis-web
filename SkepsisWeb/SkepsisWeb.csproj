@@ -1,0 +1,1928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{797AFA26-EDBF-4E3D-B68E-AB0A7E4FDB2A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SkepsisWeb</RootNamespace>
+    <AssemblyName>SkepsisWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid, Version=8.0.5.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.8.0.5\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.3.0.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\Site-DELETE.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="fonts\fontawesome-webfontba72.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Haku.aspx" />
+    <Content Include="Ihmeellinen\aaveilma-alukset.html" />
+    <Content Include="Ihmeellinen\aaveraketit.html" />
+    <Content Include="Ihmeellinen\aavetanssi.html" />
+    <Content Include="Ihmeellinen\abduktio.html" />
+    <Content Include="Ihmeellinen\afrosentrismi.html" />
+    <Content Include="Ihmeellinen\aivopuoliskojen_erot.html" />
+    <Content Include="Ihmeellinen\ajatuksensiirto.html" />
+    <Content Include="Ihmeellinen\ajatuskuvaus.html" />
+    <Content Include="Ihmeellinen\akaasinen_arkisto.html" />
+    <Content Include="Ihmeellinen\akupainanta.html" />
+    <Content Include="Ihmeellinen\akupunktio.html" />
+    <Content Include="Ihmeellinen\alastoman_apinan_myytti.html" />
+    <Content Include="Ihmeellinen\alue_51.html" />
+    <Content Include="Ihmeellinen\alykas_suunnitelma.html" />
+    <Content Include="Ihmeellinen\alyllinen_sykli.html" />
+    <Content Include="Ihmeellinen\american_society_for_psychical_research.html" />
+    <Content Include="Ihmeellinen\amuletti.html" />
+    <Content Include="Ihmeellinen\animaalinen_magnetismi.html" />
+    <Content Include="Ihmeellinen\anomaaliset_ilmiot.html" />
+    <Content Include="Ihmeellinen\anomalia.html" />
+    <Content Include="Ihmeellinen\anomalistinen_psykologia.html" />
+    <Content Include="Ihmeellinen\antroposofia.html" />
+    <Content Include="Ihmeellinen\aparanormaalikko.html" />
+    <Content Include="Ihmeellinen\apparitio.html" />
+    <Content Include="Ihmeellinen\apportio.html" />
+    <Content Include="Ihmeellinen\argumentointi.html" />
+    <Content Include="Ihmeellinen\arkkityyppi.html" />
+    <Content Include="Ihmeellinen\arnold_kenneth.html" />
+    <Content Include="Ihmeellinen\asimov_isaac.html" />
+    <Content Include="Ihmeellinen\askendentti.html" />
+    <Content Include="Ihmeellinen\astraalikeho.html" />
+    <Content Include="Ihmeellinen\astraaliprojektio.html" />
+    <Content Include="Ihmeellinen\astrokartta.html" />
+    <Content Include="Ihmeellinen\astrologia.html" />
+    <Content Include="Ihmeellinen\astrologiset_merkit.html" />
+    <Content Include="Ihmeellinen\ateismi.html" />
+    <Content Include="Ihmeellinen\atlantis.html" />
+    <Content Include="Ihmeellinen\aura.html" />
+    <Content Include="Ihmeellinen\aurakuvaus.html" />
+    <Content Include="Ihmeellinen\aurinkomerkki.html" />
+    <Content Include="Ihmeellinen\autoganzfeld.html" />
+    <Content Include="Ihmeellinen\automaattikirjoitus.html" />
+    <Content Include="Ihmeellinen\automaattisaveltaminen.html" />
+    <Content Include="Ihmeellinen\automaattitaide.html" />
+    <Content Include="Ihmeellinen\automatismit.html" />
+    <Content Include="Ihmeellinen\avaruusolento.html" />
+    <Content Include="Ihmeellinen\a_priori.html" />
+    <Content Include="Ihmeellinen\barnum-efekti.html" />
+    <Content Include="Ihmeellinen\bermudan_kolmio.html" />
+    <Content Include="Ihmeellinen\bio-introskopia.html" />
+    <Content Include="Ihmeellinen\bio-psykokinesia.html" />
+    <Content Include="Ihmeellinen\biodynaaminen_viljely.html" />
+    <Content Include="Ihmeellinen\bioenergia.html" />
+    <Content Include="Ihmeellinen\biorytmit.html" />
+    <Content Include="Ihmeellinen\blackmore_susan.html" />
+    <Content Include="Ihmeellinen\blavatsky_helena_petrovna.html" />
+    <Content Include="Ihmeellinen\blondlot_rene.html" />
+    <Content Include="Ihmeellinen\budo-lajit.html" />
+    <Content Include="Ihmeellinen\capra_fritjof.html" />
+    <Content Include="Ihmeellinen\cargo-kultti.html" />
+    <Content Include="Ihmeellinen\carriere_eva.html" />
+    <Content Include="Ihmeellinen\cayce_edgar.html" />
+    <Content Include="Ihmeellinen\cereal.jpg" />
+    <Content Include="Ihmeellinen\cereologia.html" />
+    <Content Include="Ihmeellinen\chakra.html" />
+    <Content Include="Ihmeellinen\chopra_deepak.html" />
+    <Content Include="Ihmeellinen\cold_reading.html" />
+    <Content Include="Ihmeellinen\committee_for_the_scientific_investigation_of_claims_of_the_paranormal.html" />
+    <Content Include="Ihmeellinen\conan_doyle_sir_arthur.html" />
+    <Content Include="Ihmeellinen\cottingleyn_keijukaiset.html" />
+    <Content Include="Ihmeellinen\crandon_margery.html" />
+    <Content Include="Ihmeellinen\csicop.html" />
+    <Content Include="Ihmeellinen\deismi.html" />
+    <Content Include="Ihmeellinen\deja_vu.html" />
+    <Content Include="Ihmeellinen\demarkaatio-ongelma.html" />
+    <Content Include="Ihmeellinen\demoni.html" />
+    <Content Include="Ihmeellinen\dermo-optinen_havaitseminen.html" />
+    <Content Include="Ihmeellinen\descartes_rene.html" />
+    <Content Include="Ihmeellinen\disinformaatio.html" />
+    <Content Include="Ihmeellinen\dmils.html" />
+    <Content Include="Ihmeellinen\dogmaatikko.html" />
+    <Content Include="Ihmeellinen\draken_kaava.html" />
+    <Content Include="Ihmeellinen\drakula.html" />
+    <Content Include="Ihmeellinen\dualismi.html" />
+    <Content Include="Ihmeellinen\ecso.html" />
+    <Content Include="Ihmeellinen\edelman_nils.html" />
+    <Content Include="Ihmeellinen\ee-ilmio.html" />
+    <Content Include="Ihmeellinen\eetterikeho.html" />
+    <Content Include="Ihmeellinen\eksorkismi.html" />
+    <Content Include="Ihmeellinen\ektoplasma.html" />
+    <Content Include="Ihmeellinen\elainrata.html" />
+    <Content Include="Ihmeellinen\elainten_psi.html" />
+    <Content Include="Ihmeellinen\emotionaalinen_sykli.html" />
+    <Content Include="Ihmeellinen\empiirinen_tutkimus.html" />
+    <Content Include="Ihmeellinen\ennaltatietaminen.html" />
+    <Content Include="Ihmeellinen\ennustaminen.html" />
+    <Content Include="Ihmeellinen\enqvist_kari.html" />
+    <Content Include="Ihmeellinen\ervast_pekka.html" />
+    <Content Include="Ihmeellinen\eskatologinen_ennustus.html" />
+    <Content Include="Ihmeellinen\esp-kortit.html" />
+    <Content Include="Ihmeellinen\esp.html" />
+    <Content Include="Ihmeellinen\et.html" />
+    <Content Include="Ihmeellinen\eti.html" />
+    <Content Include="Ihmeellinen\etiainen.html" />
+    <Content Include="Ihmeellinen\european_council_of_skeptical_organizations.html" />
+    <Content Include="Ihmeellinen\fallibilismi.html" />
+    <Content Include="Ihmeellinen\falsifiointi.html" />
+    <Content Include="Ihmeellinen\fantasia.html" />
+    <Content Include="Ihmeellinen\fantasiaan_taipuvainen_persoonallisuus.html" />
+    <Content Include="Ihmeellinen\faraon_kirous.html" />
+    <Content Include="Ihmeellinen\favicon.ico" />
+    <Content Include="Ihmeellinen\feng_shui.html" />
+    <Content Include="Ihmeellinen\fermin_paradoksi.html" />
+    <Content Include="Ihmeellinen\fideismi.html" />
+    <Content Include="Ihmeellinen\fiksu-hans.html" />
+    <Content Include="Ihmeellinen\flat_earth_society.html" />
+    <Content Include="Ihmeellinen\forer-efekti.html" />
+    <Content Include="Ihmeellinen\frenologia.html" />
+    <Content Include="Ihmeellinen\fysionomia.html" />
+    <Content Include="Ihmeellinen\fyysinen_sykli.html" />
+    <Content Include="Ihmeellinen\gaia.html" />
+    <Content Include="Ihmeellinen\ganz.jpg" />
+    <Content Include="Ihmeellinen\ganzfeld.html" />
+    <Content Include="Ihmeellinen\gardner_martin.html" />
+    <Content Include="Ihmeellinen\geller-efekti.html" />
+    <Content Include="Ihmeellinen\geller_uri.html" />
+    <Content Include="Ihmeellinen\glossolalia.html" />
+    <Content Include="Ihmeellinen\grafologia.html" />
+    <Content Include="Ihmeellinen\grafoterapia.html" />
+    <Content Include="Ihmeellinen\grohn_lauri.html" />
+    <Content Include="Ihmeellinen\haamulehti.html" />
+    <Content Include="Ihmeellinen\hakemisto.html" />
+    <Content Include="Ihmeellinen\hakkinen_jukka.html" />
+    <Content Include="Ihmeellinen\hallusinaatio.html" />
+    <Content Include="Ihmeellinen\heavens_gate.html" />
+    <Content Include="Ihmeellinen\hengen_ja_tiedon_messut.html" />
+    <Content Include="Ihmeellinen\henkiparannus.html" />
+    <Content Include="Ihmeellinen\hill_betty_ja_barney.html" />
+    <Content Include="Ihmeellinen\holokaustin_kieltaminen.html" />
+    <Content Include="Ihmeellinen\homeopatia.html" />
+    <Content Include="Ihmeellinen\home_daniel_dunglas.html" />
+    <Content Include="Ihmeellinen\honorton_charles.html" />
+    <Content Include="Ihmeellinen\horoskooppi.html" />
+    <Content Include="Ihmeellinen\hot_reading.html" />
+    <Content Include="Ihmeellinen\houdini_harry.html" />
+    <Content Include="Ihmeellinen\humanismi.html" />
+    <Content Include="Ihmeellinen\humanoidi.html" />
+    <Content Include="Ihmeellinen\humen_giljotiini.html" />
+    <Content Include="Ihmeellinen\humen_puntari.html" />
+    <Content Include="Ihmeellinen\hume_david.html" />
+    <Content Include="Ihmeellinen\huuhaa-palkinto.html" />
+    <Content Include="Ihmeellinen\huuhaa.html" />
+    <Content Include="Ihmeellinen\hyman_ray.html" />
+    <Content Include="Ihmeellinen\hynek_j_allen.html" />
+    <Content Include="Ihmeellinen\hypnagoginen_hallusinaatio.html" />
+    <Content Include="Ihmeellinen\hypnoosi.html" />
+    <Content Include="Ihmeellinen\hypnoottinen_progressio.html" />
+    <Content Include="Ihmeellinen\hypnoottinen_regressio.html" />
+    <Content Include="Ihmeellinen\hypnopompinen_hallusinaatio.html" />
+    <Content Include="Ihmeellinen\hypoteesi.html" />
+    <Content Include="Ihmeellinen\hypoteettis-deduktiivinen_menetelma.html" />
+    <Content Include="Ihmeellinen\id.html" />
+    <Content Include="Ihmeellinen\ideomotorinen_liike.html" />
+    <Content Include="Ihmeellinen\ideoplasti.html" />
+    <Content Include="Ihmeellinen\ifo.html" />
+    <Content Include="Ihmeellinen\ig_nobel_-palkinto.html" />
+    <Content Include="Ihmeellinen\ihanien_ihmisten_myytti.html" />
+    <Content Include="Ihmeellinen\ihme.html" />
+    <Content Include="Ihmeellinen\ihmeellinen.css" />
+    <Content Include="Ihmeellinen\ihmeparantaminen.html" />
+    <Content Include="Ihmeellinen\ihmisen_spontaani_palaminen.html" />
+    <Content Include="Ihmeellinen\ihmismagneetti.html" />
+    <Content Include="Ihmeellinen\ihonako.html" />
+    <Content Include="Ihmeellinen\implantti.html" />
+    <Content Include="Ihmeellinen\index.html" />
+    <Content Include="Ihmeellinen\induktio.html" />
+    <Content Include="Ihmeellinen\intelligent_design.html" />
+    <Content Include="Ihmeellinen\international_flat_earth_research_society.html" />
+    <Content Include="Ihmeellinen\istunto.html" />
+    <Content Include="Ihmeellinen\i_ching.html" />
+    <Content Include="Ihmeellinen\jalleensyntyminen.html" />
+    <Content Include="Ihmeellinen\jamais_vu.html" />
+    <Content Include="Ihmeellinen\james_randi_educational_foundation.html" />
+    <Content Include="Ihmeellinen\jarvinen_risto_k.html" />
+    <Content Include="Ihmeellinen\jin_ja_jang.html" />
+    <Content Include="Ihmeellinen\jooga.html" />
+    <Content Include="Ihmeellinen\joogalentaminen.html" />
+    <Content Include="Ihmeellinen\jumalan_olemassaolo.html" />
+    <Content Include="Ihmeellinen\jung_carl_gustav.html" />
+    <Content Include="Ihmeellinen\kaarinliinatiede.html" />
+    <Content Include="Ihmeellinen\kadesta_katsominen.html" />
+    <Content Include="Ihmeellinen\kaivonkatsominen.html" />
+    <Content Include="Ihmeellinen\kaksoissokkokoe.html" />
+    <Content Include="Ihmeellinen\kanavointi.html" />
+    <Content Include="Ihmeellinen\karjansilpomiset.html" />
+    <Content Include="Ihmeellinen\karman_laki.html" />
+    <Content Include="Ihmeellinen\karttunen_hannu.html" />
+    <Content Include="Ihmeellinen\kasvipsyykikot.html" />
+    <Content Include="Ihmeellinen\katten_paalle_paneminen.html" />
+    <Content Include="Ihmeellinen\kehostapoistumiskokemus.html" />
+    <Content Include="Ihmeellinen\kielillapuhuminen.html" />
+    <Content Include="Ihmeellinen\kiinalainen_astrologia.html" />
+    <Content Include="Ihmeellinen\kirjallisuutta.html" />
+    <Content Include="Ihmeellinen\kirliankuvaus.html" />
+    <Content Include="Ihmeellinen\kiroaminen.html" />
+    <Content Include="Ihmeellinen\kirologia.html" />
+    <Content Include="Ihmeellinen\kiromantia.html" />
+    <Content Include="Ihmeellinen\kirosofia.html" />
+    <Content Include="Ihmeellinen\kivinen_s_albert.html" />
+    <Content Include="Ihmeellinen\klass_philip_j.html" />
+    <Content Include="Ihmeellinen\koestler_arthur.html" />
+    <Content Include="Ihmeellinen\kollektiivinen_piilotajunta.html" />
+    <Content Include="Ihmeellinen\kolmas_kulttuuri.html" />
+    <Content Include="Ihmeellinen\kontaktihenkilo.html" />
+    <Content Include="Ihmeellinen\kreationismi.html" />
+    <Content Include="Ihmeellinen\kriittinen_realismi.html" />
+    <Content Include="Ihmeellinen\kryptestesia.html" />
+    <Content Include="Ihmeellinen\ksenoglossolalia.html" />
+    <Content Include="Ihmeellinen\ksenografia.html" />
+    <Content Include="Ihmeellinen\kummittelu.html" />
+    <Content Include="Ihmeellinen\kuoleman_jalkeinen_elama.html" />
+    <Content Include="Ihmeellinen\kurtz_paul.html" />
+    <Content Include="Ihmeellinen\kuuhulluus.html" />
+    <Content Include="Ihmeellinen\kuumerkki.html" />
+    <Content Include="Ihmeellinen\kvanttimystiikka.html" />
+    <Content Include="Ihmeellinen\kymmenen_prosentin_myytti.html" />
+    <Content Include="Ihmeellinen\laantumistaipumus.html" />
+    <Content Include="Ihmeellinen\lady_wonder.html" />
+    <Content Include="Ihmeellinen\laki.html" />
+    <Content Include="Ihmeellinen\lammas.html" />
+    <Content Include="Ihmeellinen\lazaris.html" />
+    <Content Include="Ihmeellinen\leidenfrost-efekti.html" />
+    <Content Include="Ihmeellinen\lemuria.html" />
+    <Content Include="Ihmeellinen\lentava_lautanen.html" />
+    <Content Include="Ihmeellinen\levitaatio.html" />
+    <Content Include="Ihmeellinen\lindeman_marjaana.html" />
+    <Content Include="Ihmeellinen\loch_nessin_hirvio.html" />
+    <Content Include="Ihmeellinen\lukijalle.html" />
+    <Content Include="Ihmeellinen\luomisoppi.html" />
+    <Content Include="Ihmeellinen\luonnonlaakinta.html" />
+    <Content Include="Ihmeellinen\luontaislaaketiede.html" />
+    <Content Include="Ihmeellinen\luontaislaakinta.html" />
+    <Content Include="Ihmeellinen\maaginen_ajattelu.html" />
+    <Content Include="Ihmeellinen\maahan_syoksyneet_ufot.html" />
+    <Content Include="Ihmeellinen\maasateily.html" />
+    <Content Include="Ihmeellinen\mack_john.html" />
+    <Content Include="Ihmeellinen\magia.html" />
+    <Content Include="Ihmeellinen\majestic-12.html" />
+    <Content Include="Ihmeellinen\makro-pk.html" />
+    <Content Include="Ihmeellinen\malli.html" />
+    <Content Include="Ihmeellinen\manaaminen.html" />
+    <Content Include="Ihmeellinen\mantra.html" />
+    <Content Include="Ihmeellinen\mars-ilmio.html" />
+    <Content Include="Ihmeellinen\mars.jpg" />
+    <Content Include="Ihmeellinen\marsin_kasvot.html" />
+    <Content Include="Ihmeellinen\materialisaatio.html" />
+    <Content Include="Ihmeellinen\meditaatio.html" />
+    <Content Include="Ihmeellinen\meedio.html" />
+    <Content Include="Ihmeellinen\mentalisti.html" />
+    <Content Include="Ihmeellinen\men_in_black.html" />
+    <Content Include="Ihmeellinen\messiasmyytti.html" />
+    <Content Include="Ihmeellinen\metodologinen_instrumentalismi.html" />
+    <Content Include="Ihmeellinen\miehet_mustissa.html" />
+    <Content Include="Ihmeellinen\mielimyytti.html" />
+    <Content Include="Ihmeellinen\mietiskely.html" />
+    <Content Include="Ihmeellinen\mikro-pk.html" />
+    <Content Include="Ihmeellinen\mj-12.html" />
+    <Content Include="Ihmeellinen\moderni_skeptisismi.html" />
+    <Content Include="Ihmeellinen\monismi.html" />
+    <Content Include="Ihmeellinen\moraalirelativismi.html" />
+    <Content Include="Ihmeellinen\moralistinen_virhepaatelma.html" />
+    <Content Include="Ihmeellinen\morfinen_resonanssi.html" />
+    <Content Include="Ihmeellinen\morfogeneettinen_kentta.html" />
+    <Content Include="Ihmeellinen\morris_robert_l.html" />
+    <Content Include="Ihmeellinen\mu.html" />
+    <Content Include="Ihmeellinen\muinaiset_astronautit.html" />
+    <Content Include="Ihmeellinen\mustelin_nils.html" />
+    <Content Include="Ihmeellinen\muuntuneet_tajunnantilat.html" />
+    <Content Include="Ihmeellinen\muutosten_kirja.html" />
+    <Content Include="Ihmeellinen\m_i_b.html" />
+    <Content Include="Ihmeellinen\n-sateet.html" />
+    <Content Include="Ihmeellinen\naennaistiede.html" />
+    <Content Include="Ihmeellinen\naiivi_realismi.html" />
+    <Content Include="Ihmeellinen\naturalistinen_virhepaatelma.html" />
+    <Content Include="Ihmeellinen\nazcan_linjat.html" />
+    <Content Include="Ihmeellinen\nde.html" />
+    <Content Include="Ihmeellinen\new_age.html" />
+    <Content Include="Ihmeellinen\new_hampshiren_abduktio.html" />
+    <Content Include="Ihmeellinen\niiniluoto_ilkka.html" />
+    <Content Include="Ihmeellinen\noituus.html" />
+    <Content Include="Ihmeellinen\nosebo.html" />
+    <Content Include="Ihmeellinen\nostradamus_michel_de.html" />
+    <Content Include="Ihmeellinen\nouseva_merkki.html" />
+    <Content Include="Ihmeellinen\numerologia.html" />
+    <Content Include="Ihmeellinen\obe.html" />
+    <Content Include="Ihmeellinen\occamin_partaveitsi.html" />
+    <Content Include="Ihmeellinen\ollikainen_marketta.html" />
+    <Content Include="Ihmeellinen\om.html" />
+    <Content Include="Ihmeellinen\oobe.html" />
+    <Content Include="Ihmeellinen\ouija-lauta.html" />
+    <Content Include="Ihmeellinen\paha_silma.html" />
+    <Content Include="Ihmeellinen\paholaisen_asianajaja.html" />
+    <Content Include="Ihmeellinen\paleokontaktitutkimus.html" />
+    <Content Include="Ihmeellinen\palladino_eusapia.html" />
+    <Content Include="Ihmeellinen\palmistria.html" />
+    <Content Include="Ihmeellinen\panteismi.html" />
+    <Content Include="Ihmeellinen\paradigma.html" />
+    <Content Include="Ihmeellinen\paranormaali_ilmio.html" />
+    <Content Include="Ihmeellinen\parantava_kosketus.html" />
+    <Content Include="Ihmeellinen\parapsykologia.html" />
+    <Content Include="Ihmeellinen\parapsykologiset_ilmiot.html" />
+    <Content Include="Ihmeellinen\pedomantia.html" />
+    <Content Include="Ihmeellinen\pienet_vihreat_miehet.html" />
+    <Content Include="Ihmeellinen\pigasus-palkinto.html" />
+    <Content Include="Ihmeellinen\piltdownin_ihminen.html" />
+    <Content Include="Ihmeellinen\pk.html" />
+    <Content Include="Ihmeellinen\plasebo.html" />
+    <Content Include="Ihmeellinen\poliisipsyykikko.html" />
+    <Content Include="Ihmeellinen\poltergeist.html" />
+    <Content Include="Ihmeellinen\popper_karl.html" />
+    <Content Include="Ihmeellinen\positivismi.html" />
+    <Content Include="Ihmeellinen\postkognitio.html" />
+    <Content Include="Ihmeellinen\postmodernismi.html" />
+    <Content Include="Ihmeellinen\povaus.html" />
+    <Content Include="Ihmeellinen\prekognitio.html" />
+    <Content Include="Ihmeellinen\projektiiviset_testit.html" />
+    <Content Include="Ihmeellinen\projekti_alfa.html" />
+    <Content Include="Ihmeellinen\pseudohistoria.html" />
+    <Content Include="Ihmeellinen\pseudotiede.html" />
+    <Content Include="Ihmeellinen\psi.html" />
+    <Content Include="Ihmeellinen\psykografi.html" />
+    <Content Include="Ihmeellinen\psykokinesia.html" />
+    <Content Include="Ihmeellinen\psykokulttuuri.html" />
+    <Content Include="Ihmeellinen\psykoskopia.html" />
+    <Content Include="Ihmeellinen\psyykikko.html" />
+    <Content Include="Ihmeellinen\psyykkinen_arkeologia.html" />
+    <Content Include="Ihmeellinen\psyykkinen_kirurgia.html" />
+    <Content Include="Ihmeellinen\puhelintelepatia.html" />
+    <Content Include="Ihmeellinen\puuttuva_psi.html" />
+    <Content Include="Ihmeellinen\rajakokemus.html" />
+    <Content Include="Ihmeellinen\ramtha.html" />
+    <Content Include="Ihmeellinen\randi_james.html" />
+    <Content Include="Ihmeellinen\rayhahenki.html" />
+    <Content Include="Ihmeellinen\regressioterapia.html" />
+    <Content Include="Ihmeellinen\reinkarnaatio.html" />
+    <Content Include="Ihmeellinen\relativismi.html" />
+    <Content Include="Ihmeellinen\reliabiliteetti.html" />
+    <Content Include="Ihmeellinen\retrokognitio.html" />
+    <Content Include="Ihmeellinen\reversebibliography.html" />
+    <Content Include="Ihmeellinen\revisionismi.html" />
+    <Content Include="Ihmeellinen\rhine_joseph_banks.html" />
+    <Content Include="Ihmeellinen\riivattu.html" />
+    <Content Include="Ihmeellinen\rosa_emily.html" />
+    <Content Include="Ihmeellinen\roswellin_tapaus.html" />
+    <Content Include="Ihmeellinen\rukoileminen.html" />
+    <Content Include="Ihmeellinen\ruumiistapoistumiskokemus.html" />
+    <Content Include="Ihmeellinen\ruusuristilaisyys.html" />
+    <Content Include="Ihmeellinen\saano_veijo.html" />
+    <Content Include="Ihmeellinen\sadannen_apinan_ilmio.html" />
+    <Content Include="Ihmeellinen\sagan_carl.html" />
+    <Content Include="Ihmeellinen\sai_baba.html" />
+    <Content Include="Ihmeellinen\salmi_ilpo_v.html" />
+    <Content Include="Ihmeellinen\savolainen_horoskooppi.html" />
+    <Content Include="Ihmeellinen\scopesin_oikeudenkaynti.html" />
+    <Content Include="Ihmeellinen\selkouni.html" />
+    <Content Include="Ihmeellinen\selvaaistiminen.html" />
+    <Content Include="Ihmeellinen\selvakuuleminen.html" />
+    <Content Include="Ihmeellinen\selvanakeminen.html" />
+    <Content Include="Ihmeellinen\selvauni.html" />
+    <Content Include="Ihmeellinen\seppanen_iiro.html" />
+    <Content Include="Ihmeellinen\serios_ted.html" />
+    <Content Include="Ihmeellinen\seth.html" />
+    <Content Include="Ihmeellinen\seti.html" />
+    <Content Include="Ihmeellinen\sheldrake_rupert.html" />
+    <Content Include="Ihmeellinen\shermer_michael.html" />
+    <Content Include="Ihmeellinen\siddhi.html" />
+    <Content Include="Ihmeellinen\sidebar.png" />
+    <Content Include="Ihmeellinen\sideerinen_astrologia.html" />
+    <Content Include="Ihmeellinen\sielunvaellus.html" />
+    <Content Include="Ihmeellinen\sieppaus.html" />
+    <Content Include="Ihmeellinen\siirtymisefekti.html" />
+    <Content Include="Ihmeellinen\silmaton_nakokyky.html" />
+    <Content Include="Ihmeellinen\skepsis_ry.html" />
+    <Content Include="Ihmeellinen\skeptic.html" />
+    <Content Include="Ihmeellinen\skeptical_inquirer.html" />
+    <Content Include="Ihmeellinen\skeptics_society.html" />
+    <Content Include="Ihmeellinen\skeptikko-lehti.html" />
+    <Content Include="Ihmeellinen\skeptikko.html" />
+    <Content Include="Ihmeellinen\skeptisismi.html" />
+    <Content Include="Ihmeellinen\skientismi.html" />
+    <Content Include="Ihmeellinen\soal_samuel_george.html" />
+    <Content Include="Ihmeellinen\society_for_psychical_research.html" />
+    <Content Include="Ihmeellinen\sokalin_tapaus.html" />
+    <Content Include="Ihmeellinen\sokkokoe.html" />
+    <Content Include="Ihmeellinen\sokrates-palkinto.html" />
+    <Content Include="Ihmeellinen\spiritismi.html" />
+    <Content Include="Ihmeellinen\spiritualismi.html" />
+    <Content Include="Ihmeellinen\spontaani_palaminen.html" />
+    <Content Include="Ihmeellinen\sporalogia.html" />
+    <Content Include="Ihmeellinen\spr.html" />
+    <Content Include="Ihmeellinen\stargate-projekti.html" />
+    <Content Include="Ihmeellinen\steiner_rudolf.html" />
+    <Content Include="Ihmeellinen\stigmatisaatio.html" />
+    <Content Include="Ihmeellinen\suggestio.html" />
+    <Content Include="Ihmeellinen\suora_mentaalinen_yhteys_elaviin_jarjestelmiin.html" />
+    <Content Include="Ihmeellinen\suurten_lukujen_laki.html" />
+    <Content Include="Ihmeellinen\synkronisiteetti.html" />
+    <Content Include="Ihmeellinen\syntymakartta.html" />
+    <Content Include="Ihmeellinen\tahtikartta.html" />
+    <Content Include="Ihmeellinen\taikausko.html" />
+    <Content Include="Ihmeellinen\taikavarpu.html" />
+    <Content Include="Ihmeellinen\taikuus.html" />
+    <Content Include="Ihmeellinen\taistelutaidot.html" />
+    <Content Include="Ihmeellinen\taivaanportti.html" />
+    <Content Include="Ihmeellinen\talismaani.html" />
+    <Content Include="Ihmeellinen\tarot.html" />
+    <Content Include="Ihmeellinen\teismi.html" />
+    <Content Include="Ihmeellinen\telekinesia.html" />
+    <Content Include="Ihmeellinen\telepatha-kortit.html" />
+    <Content Include="Ihmeellinen\telepatia.html" />
+    <Content Include="Ihmeellinen\teleportaatio.html" />
+    <Content Include="Ihmeellinen\telestesia.html" />
+    <Content Include="Ihmeellinen\teoria.html" />
+    <Content Include="Ihmeellinen\teosofia.html" />
+    <Content Include="Ihmeellinen\terapeuttinen_kosketus.html" />
+    <Content Include="Ihmeellinen\tiede.html" />
+    <Content Include="Ihmeellinen\tieteellinen_kreationismi.html" />
+    <Content Include="Ihmeellinen\tieteenfilosofia.html" />
+    <Content Include="Ihmeellinen\tieteisusko.html" />
+    <Content Include="Ihmeellinen\tietorelativismi.html" />
+    <Content Include="Ihmeellinen\tm.html" />
+    <Content Include="Ihmeellinen\todistustaakka.html" />
+    <Content Include="Ihmeellinen\torinon_kaarinliina.html" />
+    <Content Include="Ihmeellinen\totuusrelativismi.html" />
+    <Content Include="Ihmeellinen\totuusteoriat.html" />
+    <Content Include="Ihmeellinen\toukomies_veli.html" />
+    <Content Include="Ihmeellinen\transsendenttinen_meditaatio.html" />
+    <Content Include="Ihmeellinen\trooppinen_astrologia.html" />
+    <Content Include="Ihmeellinen\tt.html" />
+    <Content Include="Ihmeellinen\tulikavely.html" />
+    <Content Include="Ihmeellinen\tunnesykli.html" />
+    <Content Include="Ihmeellinen\tunnonsiirto.html" />
+    <Content Include="Ihmeellinen\tuomela_raimo.html" />
+    <Content Include="Ihmeellinen\ufo.html" />
+    <Content Include="Ihmeellinen\ufo.jpg" />
+    <Content Include="Ihmeellinen\ufologia.html" />
+    <Content Include="Ihmeellinen\ufosieppaus.html" />
+    <Content Include="Ihmeellinen\ufotutkimus.html" />
+    <Content Include="Ihmeellinen\ufouskonto.html" />
+    <Content Include="Ihmeellinen\ufovalokuva.html" />
+    <Content Include="Ihmeellinen\ujousilmio.html" />
+    <Content Include="Ihmeellinen\unihalvaus.html" />
+    <Content Include="Ihmeellinen\uskomuslaakinta.html" />
+    <Content Include="Ihmeellinen\uskon_terveellisyys.html" />
+    <Content Include="Ihmeellinen\ussher_james.html" />
+    <Content Include="Ihmeellinen\uusi_kreationismi.html" />
+    <Content Include="Ihmeellinen\vaihtoehtolaaketiede.html" />
+    <Content Include="Ihmeellinen\vaihtoehtolaakinta.html" />
+    <Content Include="Ihmeellinen\valemuisto.html" />
+    <Content Include="Ihmeellinen\valemuistosyndrooma.html" />
+    <Content Include="Ihmeellinen\valetiede.html" />
+    <Content Include="Ihmeellinen\validiteetti.html" />
+    <Content Include="Ihmeellinen\valistus.html" />
+    <Content Include="Ihmeellinen\valkoinen_kohina.html" />
+    <Content Include="Ihmeellinen\valveuni.html" />
+    <Content Include="Ihmeellinen\vampyyri.html" />
+    <Content Include="Ihmeellinen\vapaa-ajattelu.html" />
+    <Content Include="Ihmeellinen\vapaamuurarius.html" />
+    <Content Include="Ihmeellinen\variterapia.html" />
+    <Content Include="Ihmeellinen\veden_muisti.html" />
+    <Content Include="Ihmeellinen\verifiointi.html" />
+    <Content Include="Ihmeellinen\viitekehys.html" />
+    <Content Include="Ihmeellinen\viljaympyra.html" />
+    <Content Include="Ihmeellinen\virtsaterapia.html" />
+    <Content Include="Ihmeellinen\vitalismi.html" />
+    <Content Include="Ihmeellinen\voodoo-kuolema.html" />
+    <Content Include="Ihmeellinen\voodoo.html" />
+    <Content Include="Ihmeellinen\vuohi.html" />
+    <Content Include="Ihmeellinen\warm_reading.html" />
+    <Content Include="Ihmeellinen\wicca.html" />
+    <Content Include="Ihmeellinen\yin_ja_yang.html" />
+    <Content Include="Ihmeellinen\yliluonnollinen_ilmio.html" />
+    <Content Include="Ihmeellinen\yoga.html" />
+    <Content Include="Ihmeellinen\zener-kortit.html" />
+    <Content Include="Ihmeellinen\zener.png" />
+    <Content Include="Ihmeellinen\zeteetikko.html" />
+    <Content Include="Ihmeellinen\zodiakki.html" />
+    <Content Include="Ihmeellinen\zombie.html" />
+    <Content Include="Img\2016-3.png" />
+    <Content Include="Img\Bottom_texture.jpg" />
+    <Content Include="Img\facebook.jpg" />
+    <Content Include="Img\favicon.ico" />
+    <Content Include="Img\header.jpg" />
+    <Content Include="Img\liity.png" />
+    <Content Include="Img\logo.png" />
+    <Content Include="Img\menuseparator.png" />
+    <Content Include="Img\postbullets.png" />
+    <Content Include="Img\spacer.gif" />
+    <Content Include="Img\subitem.png" />
+    <Content Include="Julkaisuja\Artikkelit.aspx" />
+    <Content Include="Julkaisuja\AudioJaVideoTallenteet.aspx" />
+    <Content Include="Julkaisuja\Linkkeja.aspx" />
+    <Content Include="Julkaisuja\Skeptikko2011.aspx" />
+    <Content Include="Julkaisuja\Skeptikko2012.aspx" />
+    <Content Include="Julkaisuja\Skeptikko2013.aspx" />
+    <Content Include="Julkaisuja\Skeptikkolehti2014.aspx" />
+    <Content Include="Julkaisuja\Skeptikkolehti2015.aspx" />
+    <Content Include="Julkaisuja\Skeptikkolehti2016.aspx" />
+    <Content Include="Julkaisuja\SkeptikkoLehti.aspx" />
+    <Content Include="Jutut\default.htm" />
+    <Content Include="Jutut\einstein.html" />
+    <Content Include="Jutut\homeopat.htm" />
+    <Content Include="Jutut\homeopat.html" />
+    <Content Include="Jutut\homppa.html" />
+    <Content Include="Jutut\ilmastonmuutos.html" />
+    <Content Include="Jutut\index.html" />
+    <Content Include="Jutut\itameri_nyt.html" />
+    <Content Include="Jutut\keskustelu.html" />
+    <Content Include="Jutut\kynttila-korvassa.html" />
+    <Content Include="Jutut\kysy_ja_kyseenalaista.html" />
+    <Content Include="Jutut\kysy_ja_kyseenalaista.png" />
+    <Content Include="Jutut\maasateilyraportti-kannet.png" />
+    <Content Include="Jutut\maasateilyraportti.html" />
+    <Content Include="Jutut\nikeasta_ostoparatiiseihin.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\alkusanat.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\index.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\kansi.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\kirjoittajista.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01-1.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01-2.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01-3.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01-4.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01-5.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku01.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku02.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku03.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku04.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku05.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku06.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku07.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku08.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku09.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku10.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku11.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku12-1.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku12-2.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku12-3.jpg" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku12.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku13.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku14.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-1.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-2.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-3.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-4.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-5.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15-6.png" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku15.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku16.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\luku17.html" />
+    <Content Include="Jutut\paholaisen_asianajajan_paluu\pahpaluu.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\esipuhe.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\img036.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img038.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img039.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img045.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img049.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img089.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img104.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img105.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img110.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img112.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img113.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img115.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img116.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img130.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img135.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img138.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img141.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img142.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img163.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img166.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img173.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img180.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img182.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img183.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img186.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img205.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\img214.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img217.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img225.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\img233.png" />
+    <Content Include="Jutut\paholaisen_asianajaja\index.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\kansi.jpg" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku1.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku10.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku2.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku3.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku4.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku5.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku6.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku7.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku8.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\luku9.html" />
+    <Content Include="Jutut\paholaisen_asianajaja\paholaisen_asianajaja.ico" />
+    <Content Include="Jutut\pakki.htm" />
+    <Content Include="Jutut\pakki.html" />
+    <Content Include="Jutut\skeptismi.html" />
+    <Content Include="Jutut\teeta_ja_homeopatiaa.html" />
+    <Content Include="Jutut\tiede-pseudotiede.html" />
+    <Content Include="Jutut\toimiiko.htm" />
+    <Content Include="Jutut\toimiiko.html" />
+    <Content Include="Jutut\virhelista.html" />
+    <Content Include="Jutut\walle.html" />
+    <Content Include="Keskustelu\KeskustelusivustonSaannot.aspx" />
+    <Content Include="Kuvat\facebook.png" />
+    <Content Include="Kuvat\skepsis-ry.100x20.png" />
+    <Content Include="Kuvat\t_mini-b.png" />
+    <Content Include="Kuvat\Vanhojen Skeptikkojen legacy.txt" />
+    <Content Include="Lehti\1988\01-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1988\01-skeptikko.png" />
+    <Content Include="Lehti\1988\index.html" />
+    <Content Include="Lehti\1989\02-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1989\02-skeptikko.png" />
+    <Content Include="Lehti\1989\03-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1989\03-skeptikko.png" />
+    <Content Include="Lehti\1989\04-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1989\04-skeptikko.png" />
+    <Content Include="Lehti\1989\05-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1989\05-skeptikko.png" />
+    <Content Include="Lehti\1989\index.html" />
+    <Content Include="Lehti\1990\06-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1990\06-skeptikko.png" />
+    <Content Include="Lehti\1990\07-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1990\07-skeptikko.png" />
+    <Content Include="Lehti\1990\08-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1990\08-skeptikko.png" />
+    <Content Include="Lehti\1990\09-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1990\09-skeptikko.png" />
+    <Content Include="Lehti\1990\index.html" />
+    <Content Include="Lehti\1991\10-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1991\10-skeptikko.png" />
+    <Content Include="Lehti\1991\11-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1991\11-skeptikko.png" />
+    <Content Include="Lehti\1991\12-13-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1991\12-13-skeptikko.png" />
+    <Content Include="Lehti\1991\index.html" />
+    <Content Include="Lehti\1992\14-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1992\14-skeptikko.png" />
+    <Content Include="Lehti\1992\15-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1992\15-skeptikko.png" />
+    <Content Include="Lehti\1992\index.html" />
+    <Content Include="Lehti\1993\1993-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1993\1993-1-skeptikko.png" />
+    <Content Include="Lehti\1993\1993-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1993\1993-2-skeptikko.png" />
+    <Content Include="Lehti\1993\1993-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1993\1993-3-skeptikko.png" />
+    <Content Include="Lehti\1993\1993-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1993\1993-4-skeptikko.png" />
+    <Content Include="Lehti\1993\index.html" />
+    <Content Include="Lehti\1994\1994-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1994\1994-1-skeptikko.png" />
+    <Content Include="Lehti\1994\1994-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1994\1994-2-skeptikko.png" />
+    <Content Include="Lehti\1994\1994-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1994\1994-3-skeptikko.png" />
+    <Content Include="Lehti\1994\1994-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1994\1994-4-skeptikko.png" />
+    <Content Include="Lehti\1994\index.html" />
+    <Content Include="Lehti\1995\1995-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1995\1995-1-skeptikko.png" />
+    <Content Include="Lehti\1995\1995-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1995\1995-2-skeptikko.png" />
+    <Content Include="Lehti\1995\1995-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1995\1995-3-skeptikko.png" />
+    <Content Include="Lehti\1995\1995-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1995\1995-4-skeptikko.png" />
+    <Content Include="Lehti\1995\index.html" />
+    <Content Include="Lehti\1996\1996-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1996\1996-1-skeptikko.png" />
+    <Content Include="Lehti\1996\1996-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1996\1996-2-skeptikko.png" />
+    <Content Include="Lehti\1996\1996-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1996\1996-3-skeptikko.png" />
+    <Content Include="Lehti\1996\1996-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1996\1996-4-skeptikko.png" />
+    <Content Include="Lehti\1996\index.html" />
+    <Content Include="Lehti\1997\1997-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1997\1997-1-skeptikko.png" />
+    <Content Include="Lehti\1997\1997-2-mustelin.html" />
+    <Content Include="Lehti\1997\1997-2-ollikainen.html" />
+    <Content Include="Lehti\1997\1997-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1997\1997-2-skeptikko.png" />
+    <Content Include="Lehti\1997\1997-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1997\1997-3-skeptikko.png" />
+    <Content Include="Lehti\1997\1997-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1997\1997-4-skeptikko.png" />
+    <Content Include="Lehti\1997\index.html" />
+    <Content Include="Lehti\1998\1998-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1998\1998-1-skeptikko.png" />
+    <Content Include="Lehti\1998\1998-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1998\1998-2-skeptikko.png" />
+    <Content Include="Lehti\1998\1998-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1998\1998-3-skeptikko.png" />
+    <Content Include="Lehti\1998\1998-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1998\1998-4-skeptikko.jpg" />
+    <Content Include="Lehti\1998\index.html" />
+    <Content Include="Lehti\1999\1999-1-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1999\1999-1-skeptikko.jpg" />
+    <Content Include="Lehti\1999\1999-2-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1999\1999-2-skeptikko.jpg" />
+    <Content Include="Lehti\1999\1999-3-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1999\1999-3-skeptikko.jpg" />
+    <Content Include="Lehti\1999\1999-4-skeptikko-thumbnail.png" />
+    <Content Include="Lehti\1999\1999-4-skeptikko.jpg" />
+    <Content Include="Lehti\1999\index.html" />
+    <Content Include="Lehti\2000\2000-1-thumbnail.png" />
+    <Content Include="Lehti\2000\2000-1.jpg" />
+    <Content Include="Lehti\2000\2000-1huld.html" />
+    <Content Include="Lehti\2000\2000-2-thumbnail.png" />
+    <Content Include="Lehti\2000\2000-2.jpg" />
+    <Content Include="Lehti\2000\2000-2must.html" />
+    <Content Include="Lehti\2000\2000-3-thumbnail.png" />
+    <Content Include="Lehti\2000\2000-3.jpg" />
+    <Content Include="Lehti\2000\2000-3jarv.html" />
+    <Content Include="Lehti\2000\2000-4-thumbnail.png" />
+    <Content Include="Lehti\2000\2000-4.jpg" />
+    <Content Include="Lehti\2000\2000-4kola.html" />
+    <Content Include="Lehti\2000\index.html" />
+    <Content Include="Lehti\2001\2001-1-thumbnail.png" />
+    <Content Include="Lehti\2001\2001-1.jpg" />
+    <Content Include="Lehti\2001\2001-1jarv.html" />
+    <Content Include="Lehti\2001\2001-2-thumbnail.png" />
+    <Content Include="Lehti\2001\2001-2.jpg" />
+    <Content Include="Lehti\2001\2001-2jarv.html" />
+    <Content Include="Lehti\2001\2001-2jarv.jpg" />
+    <Content Include="Lehti\2001\2001-3-thumbnail.png" />
+    <Content Include="Lehti\2001\2001-3.jpg" />
+    <Content Include="Lehti\2001\2001-3erva.html" />
+    <Content Include="Lehti\2001\2001-3make.html" />
+    <Content Include="Lehti\2001\2001-3make1.png" />
+    <Content Include="Lehti\2001\2001-3make2.jpg" />
+    <Content Include="Lehti\2001\2001-3make3.png" />
+    <Content Include="Lehti\2001\2001-4-thumbnail.png" />
+    <Content Include="Lehti\2001\2001-4.jpg" />
+    <Content Include="Lehti\2001\2001-4jar1.html" />
+    <Content Include="Lehti\2001\2001-4jar2.html" />
+    <Content Include="Lehti\2001\2001-4jar2.jpg" />
+    <Content Include="Lehti\2001\2001-4jar2.png" />
+    <Content Include="Lehti\2001\index.html" />
+    <Content Include="Lehti\2002\2002-1-thumbnail.jpg" />
+    <Content Include="Lehti\2002\2002-1.jpg" />
+    <Content Include="Lehti\2002\2002-1erva.html" />
+    <Content Include="Lehti\2002\2002-1jarv.html" />
+    <Content Include="Lehti\2002\2002-1jarv.jpg" />
+    <Content Include="Lehti\2002\2002-1kolh.html" />
+    <Content Include="Lehti\2002\2002-1kolh.jpg" />
+    <Content Include="Lehti\2002\2002-2-thumbnail.jpg" />
+    <Content Include="Lehti\2002\2002-2.jpg" />
+    <Content Include="Lehti\2002\2002-2esse.html" />
+    <Content Include="Lehti\2002\2002-2esse.jpg" />
+    <Content Include="Lehti\2002\2002-2jarv.html" />
+    <Content Include="Lehti\2002\2002-2jarv.jpg" />
+    <Content Include="Lehti\2002\2002-3-thumbnail.jpg" />
+    <Content Include="Lehti\2002\2002-3.jpg" />
+    <Content Include="Lehti\2002\2002-3jarv1.html" />
+    <Content Include="Lehti\2002\2002-3jarv2.html" />
+    <Content Include="Lehti\2002\2002-4-thumbnail.jpg" />
+    <Content Include="Lehti\2002\2002-4.jpg" />
+    <Content Include="Lehti\2002\2002-4jarv.html" />
+    <Content Include="Lehti\2002\2002-4jarv.png" />
+    <Content Include="Lehti\2002\2002-4lain.html" />
+    <Content Include="Lehti\2002\2002-4lain.png" />
+    <Content Include="Lehti\2002\2002-4paat.html" />
+    <Content Include="Lehti\2002\index.html" />
+    <Content Include="Lehti\2003\2003-1-thumbnail.jpg" />
+    <Content Include="Lehti\2003\2003-1.jpg" />
+    <Content Include="Lehti\2003\2003-1jarv.html" />
+    <Content Include="Lehti\2003\2003-1saan.html" />
+    <Content Include="Lehti\2003\2003-2-thumbnail.jpg" />
+    <Content Include="Lehti\2003\2003-2.jpg" />
+    <Content Include="Lehti\2003\2003-2chri.html" />
+    <Content Include="Lehti\2003\2003-2dawk.html" />
+    <Content Include="Lehti\2003\2003-2jarv.html" />
+    <Content Include="Lehti\2003\2003-3-thumbnail.jpg" />
+    <Content Include="Lehti\2003\2003-3.jpg" />
+    <Content Include="Lehti\2003\2003-3hakk.html" />
+    <Content Include="Lehti\2003\2003-3huuh.html" />
+    <Content Include="Lehti\2003\2003-3lain.html" />
+    <Content Include="Lehti\2003\2003-3lain.jpg" />
+    <Content Include="Lehti\2003\2003-4-thumbnail.jpg" />
+    <Content Include="Lehti\2003\2003-4.jpg" />
+    <Content Include="Lehti\2003\2003-4auno.html" />
+    <Content Include="Lehti\2003\2003-4auno.jpg" />
+    <Content Include="Lehti\2003\2003-4jarv.html" />
+    <Content Include="Lehti\2003\2003-4jarv1.jpg" />
+    <Content Include="Lehti\2003\2003-4jarv2.jpg" />
+    <Content Include="Lehti\2003\2003-4jarv3.jpg" />
+    <Content Include="Lehti\2003\2003-4jarv4.jpg" />
+    <Content Include="Lehti\2003\2003-4jarv5.jpg" />
+    <Content Include="Lehti\2003\2003-4palk.html" />
+    <Content Include="Lehti\2003\2003-4palk1.jpg" />
+    <Content Include="Lehti\2003\2003-4palk2.jpg" />
+    <Content Include="Lehti\2003\2003-4salo.html" />
+    <Content Include="Lehti\2003\index.html" />
+    <Content Include="Lehti\2004\2004-1-thumbnail.jpg" />
+    <Content Include="Lehti\2004\2004-1.jpg" />
+    <Content Include="Lehti\2004\2004-1auno.html" />
+    <Content Include="Lehti\2004\2004-1jarv.html" />
+    <Content Include="Lehti\2004\2004-1jarv.jpg" />
+    <Content Include="Lehti\2004\2004-1niem.html" />
+    <Content Include="Lehti\2004\2004-1salm.html" />
+    <Content Include="Lehti\2004\2004-1salo.html" />
+    <Content Include="Lehti\2004\2004-2-thumbnail.jpg" />
+    <Content Include="Lehti\2004\2004-2.jpg" />
+    <Content Include="Lehti\2004\2004-2foge.html" />
+    <Content Include="Lehti\2004\2004-2foge.jpg" />
+    <Content Include="Lehti\2004\2004-2jarv.html" />
+    <Content Include="Lehti\2004\2004-2kera.html" />
+    <Content Include="Lehti\2004\2004-3-thumbnail.jpg" />
+    <Content Include="Lehti\2004\2004-3.jpg" />
+    <Content Include="Lehti\2004\2004-3brus.html" />
+    <Content Include="Lehti\2004\2004-3jar1.html" />
+    <Content Include="Lehti\2004\2004-3jar2.html" />
+    <Content Include="Lehti\2004\2004-3jar2.jpg" />
+    <Content Include="Lehti\2004\2004-4-thumbnail.png" />
+    <Content Include="Lehti\2004\2004-4.png" />
+    <Content Include="Lehti\2004\2004-4auno.html" />
+    <Content Include="Lehti\2004\2004-4mart.html" />
+    <Content Include="Lehti\2004\index.html" />
+    <Content Include="Lehti\2005\2005-1-thumbnail.jpg" />
+    <Content Include="Lehti\2005\2005-1.jpg" />
+    <Content Include="Lehti\2005\2005-1hemm.html" />
+    <Content Include="Lehti\2005\2005-1saur.html" />
+    <Content Include="Lehti\2005\2005-2-thumbnail.jpg" />
+    <Content Include="Lehti\2005\2005-2.jpg" />
+    <Content Include="Lehti\2005\2005-2salm.html" />
+    <Content Include="Lehti\2005\2005-2vall.html" />
+    <Content Include="Lehti\2005\2005-3-thumbnail.jpg" />
+    <Content Include="Lehti\2005\2005-3.jpg" />
+    <Content Include="Lehti\2005\2005-3fors.html" />
+    <Content Include="Lehti\2005\2005-3fors.jpg" />
+    <Content Include="Lehti\2005\2005-3saan.html" />
+    <Content Include="Lehti\2005\2005-3saan.jpg" />
+    <Content Include="Lehti\2005\2005-3torn.html" />
+    <Content Include="Lehti\2005\2005-4-thumbnail.jpg" />
+    <Content Include="Lehti\2005\2005-4.jpg" />
+    <Content Include="Lehti\2005\2005-4gal1.jpg" />
+    <Content Include="Lehti\2005\2005-4gal2.jpg" />
+    <Content Include="Lehti\2005\2005-4gal3.jpg" />
+    <Content Include="Lehti\2005\2005-4gal4.jpg" />
+    <Content Include="Lehti\2005\2005-4gal5.jpg" />
+    <Content Include="Lehti\2005\2005-4galk.html" />
+    <Content Include="Lehti\2005\2005-4jarv.html" />
+    <Content Include="Lehti\2005\2005-4oja1.png" />
+    <Content Include="Lehti\2005\2005-4oja2.png" />
+    <Content Include="Lehti\2005\2005-4ojal.html" />
+    <Content Include="Lehti\2005\index.html" />
+    <Content Include="Lehti\2006\2006-1-jarvinen.html" />
+    <Content Include="Lehti\2006\2006-1-jarvinen2.html" />
+    <Content Include="Lehti\2006\2006-1-jarvinen2.jpg" />
+    <Content Include="Lehti\2006\2006-1-lauerma.html" />
+    <Content Include="Lehti\2006\2006-1-lauerma.jpg" />
+    <Content Include="Lehti\2006\2006-1-skepponen.jpg" />
+    <Content Include="Lehti\2006\2006-1-thumbnail.jpg" />
+    <Content Include="Lehti\2006\2006-1.jpg" />
+    <Content Include="Lehti\2006\2006-2-jarvinen.html" />
+    <Content Include="Lehti\2006\2006-2-niemela-1.jpg" />
+    <Content Include="Lehti\2006\2006-2-niemela-2.jpg" />
+    <Content Include="Lehti\2006\2006-2-niemela-3.jpg" />
+    <Content Include="Lehti\2006\2006-2-niemela.html" />
+    <Content Include="Lehti\2006\2006-2-niemela2-1.jpg" />
+    <Content Include="Lehti\2006\2006-2-niemela2.html" />
+    <Content Include="Lehti\2006\2006-2-niemela3.html" />
+    <Content Include="Lehti\2006\2006-2-niemela3.png" />
+    <Content Include="Lehti\2006\2006-2-oikaisut.html" />
+    <Content Include="Lehti\2006\2006-2-thumbnail.jpg" />
+    <Content Include="Lehti\2006\2006-2.jpg" />
+    <Content Include="Lehti\2006\2006-3-austin.html" />
+    <Content Include="Lehti\2006\2006-3-austin.jpg" />
+    <Content Include="Lehti\2006\2006-3-jarvinen.html" />
+    <Content Include="Lehti\2006\2006-3-jarvinen2.html" />
+    <Content Include="Lehti\2006\2006-3-jarvinen2.jpg" />
+    <Content Include="Lehti\2006\2006-3-thumbnail.jpg" />
+    <Content Include="Lehti\2006\2006-3.jpg" />
+    <Content Include="Lehti\2006\2006-4-jarvinen.html" />
+    <Content Include="Lehti\2006\2006-4-jarvinen2-1.jpg" />
+    <Content Include="Lehti\2006\2006-4-jarvinen2-2.jpg" />
+    <Content Include="Lehti\2006\2006-4-jarvinen2.html" />
+    <Content Include="Lehti\2006\2006-4-jarvinen3.html" />
+    <Content Include="Lehti\2006\2006-4-jarvinen3.jpg" />
+    <Content Include="Lehti\2006\2006-4-thumbnail.jpg" />
+    <Content Include="Lehti\2006\2006-4.jpg" />
+    <Content Include="Lehti\2006\index.html" />
+    <Content Include="Lehti\2007\2007-1-aunola.html" />
+    <Content Include="Lehti\2007\2007-1-jarvinen.html" />
+    <Content Include="Lehti\2007\2007-1-karttunen-1.jpg" />
+    <Content Include="Lehti\2007\2007-1-karttunen-2.jpg" />
+    <Content Include="Lehti\2007\2007-1-karttunen.html" />
+    <Content Include="Lehti\2007\2007-1-kivioja.html" />
+    <Content Include="Lehti\2007\2007-1-kivioja.jpg" />
+    <Content Include="Lehti\2007\2007-1-thumbnail.jpg" />
+    <Content Include="Lehti\2007\2007-1-thumbnail.png" />
+    <Content Include="Lehti\2007\2007-1.jpg" />
+    <Content Include="Lehti\2007\2007-2-aunola.html" />
+    <Content Include="Lehti\2007\2007-2-jarvinen.html" />
+    <Content Include="Lehti\2007\2007-2-jarvinen.jpg" />
+    <Content Include="Lehti\2007\2007-2-niemela.html" />
+    <Content Include="Lehti\2007\2007-2-niemela1.jpg" />
+    <Content Include="Lehti\2007\2007-2-niemela2.jpg" />
+    <Content Include="Lehti\2007\2007-2-salmi.html" />
+    <Content Include="Lehti\2007\2007-2-salmi1.jpg" />
+    <Content Include="Lehti\2007\2007-2-salmi2.jpg" />
+    <Content Include="Lehti\2007\2007-2-thumbnail.jpg" />
+    <Content Include="Lehti\2007\2007-2.jpg" />
+    <Content Include="Lehti\2007\2007-3-bunge.html" />
+    <Content Include="Lehti\2007\2007-3-bunge.jpg" />
+    <Content Include="Lehti\2007\2007-3-jarvinen.html" />
+    <Content Include="Lehti\2007\2007-3-jarvinen1.jpg" />
+    <Content Include="Lehti\2007\2007-3-jarvinen2-1.jpg" />
+    <Content Include="Lehti\2007\2007-3-jarvinen2.html" />
+    <Content Include="Lehti\2007\2007-3-jarvinen2.jpg" />
+    <Content Include="Lehti\2007\2007-3-thumbnail.jpg" />
+    <Content Include="Lehti\2007\2007-3.jpg" />
+    <Content Include="Lehti\2007\2007-4-aunola.html" />
+    <Content Include="Lehti\2007\2007-4-jarvinen-1.jpg" />
+    <Content Include="Lehti\2007\2007-4-jarvinen-2.jpg" />
+    <Content Include="Lehti\2007\2007-4-jarvinen-3.jpg" />
+    <Content Include="Lehti\2007\2007-4-jarvinen-4.jpg" />
+    <Content Include="Lehti\2007\2007-4-jarvinen.html" />
+    <Content Include="Lehti\2007\2007-4-jarvinen2.html" />
+    <Content Include="Lehti\2007\2007-4-jarvinen2.jpg" />
+    <Content Include="Lehti\2007\2007-4-niemela-1.jpg" />
+    <Content Include="Lehti\2007\2007-4-niemela-2.jpg" />
+    <Content Include="Lehti\2007\2007-4-niemela.html" />
+    <Content Include="Lehti\2007\2007-4-thumbnail.jpg" />
+    <Content Include="Lehti\2007\2007-4.jpg" />
+    <Content Include="Lehti\2007\index.html" />
+    <Content Include="Lehti\2008\2008-1-jarvinen1.html" />
+    <Content Include="Lehti\2008\2008-1-jarvinen2.html" />
+    <Content Include="Lehti\2008\2008-1-jarvinen2.jpg" />
+    <Content Include="Lehti\2008\2008-1-jarvinen3.html" />
+    <Content Include="Lehti\2008\2008-1-jarvinen3.jpg" />
+    <Content Include="Lehti\2008\2008-1-jarvinen4.html" />
+    <Content Include="Lehti\2008\2008-1-jarvinen4.jpg" />
+    <Content Include="Lehti\2008\2008-1-thumbnail.jpg" />
+    <Content Include="Lehti\2008\2008-1.jpg" />
+    <Content Include="Lehti\2008\2008-2-huttunen.html" />
+    <Content Include="Lehti\2008\2008-2-jarvinen.html" />
+    <Content Include="Lehti\2008\2008-2-lauerma.html" />
+    <Content Include="Lehti\2008\2008-2-thumbnail.jpg" />
+    <Content Include="Lehti\2008\2008-2.jpg" />
+    <Content Include="Lehti\2008\2008-3-aisopoksenkoira.html" />
+    <Content Include="Lehti\2008\2008-3-jarvinen.html" />
+    <Content Include="Lehti\2008\2008-3-thumbnail.jpg" />
+    <Content Include="Lehti\2008\2008-3.jpg" />
+    <Content Include="Lehti\2008\2008-4-jarvinen.html" />
+    <Content Include="Lehti\2008\2008-4-jarvinen1.jpg" />
+    <Content Include="Lehti\2008\2008-4-jarvinen2.jpg" />
+    <Content Include="Lehti\2008\2008-4-niemela.html" />
+    <Content Include="Lehti\2008\2008-4-niemela.jpg" />
+    <Content Include="Lehti\2008\2008-4-thumbnail.jpg" />
+    <Content Include="Lehti\2008\2008-4.jpg" />
+    <Content Include="Lehti\2008\index.html" />
+    <Content Include="Lehti\2009\2009-1-jarvinen1.html" />
+    <Content Include="Lehti\2009\2009-1-jarvinen2-1.jpg" />
+    <Content Include="Lehti\2009\2009-1-jarvinen2-2.jpg" />
+    <Content Include="Lehti\2009\2009-1-jarvinen2.html" />
+    <Content Include="Lehti\2009\2009-1-keskustelu.html" />
+    <Content Include="Lehti\2009\2009-1-leikola.html" />
+    <Content Include="Lehti\2009\2009-1-thumbnail.jpg" />
+    <Content Include="Lehti\2009\2009-1-vaarat.html" />
+    <Content Include="Lehti\2009\2009-1.jpg" />
+    <Content Include="Lehti\2009\2009-2-harha.html" />
+    <Content Include="Lehti\2009\2009-2-harha.jpg" />
+    <Content Include="Lehti\2009\2009-2-hirsjarvi.html" />
+    <Content Include="Lehti\2009\2009-2-hirsjarvi.jpg" />
+    <Content Include="Lehti\2009\2009-2-javanainen.html" />
+    <Content Include="Lehti\2009\2009-2-laine.html" />
+    <Content Include="Lehti\2009\2009-2-narva.html" />
+    <Content Include="Lehti\2009\2009-2-narva.jpg" />
+    <Content Include="Lehti\2009\2009-2-thumbnail.jpg" />
+    <Content Include="Lehti\2009\2009-2.jpg" />
+    <Content Include="Lehti\2009\2009-3-ahonen.html" />
+    <Content Include="Lehti\2009\2009-3-jarvinen.html" />
+    <Content Include="Lehti\2009\2009-3-jarvinen1.jpg" />
+    <Content Include="Lehti\2009\2009-3-jarvinen2.jpg" />
+    <Content Include="Lehti\2009\2009-3-thumbnail.jpg" />
+    <Content Include="Lehti\2009\2009-3.jpg" />
+    <Content Include="Lehti\2009\2009-4-ahonen.html" />
+    <Content Include="Lehti\2009\2009-4-ahonen.jpg" />
+    <Content Include="Lehti\2009\2009-4-jarvinen1-1.jpg" />
+    <Content Include="Lehti\2009\2009-4-jarvinen1-2.jpg" />
+    <Content Include="Lehti\2009\2009-4-jarvinen1.html" />
+    <Content Include="Lehti\2009\2009-4-jarvinen2-1.jpg" />
+    <Content Include="Lehti\2009\2009-4-jarvinen2-2.jpg" />
+    <Content Include="Lehti\2009\2009-4-jarvinen2.html" />
+    <Content Include="Lehti\2009\2009-4-thumbnail.jpg" />
+    <Content Include="Lehti\2009\2009-4.jpg" />
+    <Content Include="Lehti\2009\2009-5-jarvinen1.html" />
+    <Content Include="Lehti\2009\2009-5-jarvinen2.html" />
+    <Content Include="Lehti\2009\2009-5-kokkonen.html" />
+    <Content Include="Lehti\2009\2009-5-thumbnail.jpg" />
+    <Content Include="Lehti\2009\2009-5.jpg" />
+    <Content Include="Lehti\2009\index.html" />
+    <Content Include="Lehti\2010\2010-1-jarvinen.html" />
+    <Content Include="Lehti\2010\2010-1-jarvinen.jpg" />
+    <Content Include="Lehti\2010\2010-1-tenhunen.html" />
+    <Content Include="Lehti\2010\2010-1-tenhunen.jpg" />
+    <Content Include="Lehti\2010\2010-1-thumbnail.jpg" />
+    <Content Include="Lehti\2010\2010-1.jpg" />
+    <Content Include="Lehti\2010\2010-2-jarvinen1.html" />
+    <Content Include="Lehti\2010\2010-2-jarvinen2.html" />
+    <Content Include="Lehti\2010\2010-2-jarvinen2.jpg" />
+    <Content Include="Lehti\2010\2010-2-jarvinen3.html" />
+    <Content Include="Lehti\2010\2010-2-jarvinen3.jpg" />
+    <Content Include="Lehti\2010\2010-2-thumbnail.jpg" />
+    <Content Include="Lehti\2010\2010-2.jpg" />
+    <Content Include="Lehti\2010\2010-3-erjanti.html" />
+    <Content Include="Lehti\2010\2010-3-jarvinen.html" />
+    <Content Include="Lehti\2010\2010-3-jarvinen.jpg" />
+    <Content Include="Lehti\2010\2010-3-laine.html" />
+    <Content Include="Lehti\2010\2010-3-laine.jpg" />
+    <Content Include="Lehti\2010\2010-3-thumbnail.jpg" />
+    <Content Include="Lehti\2010\2010-3.jpg" />
+    <Content Include="Lehti\2010\2010-4-galkin.html" />
+    <Content Include="Lehti\2010\2010-4-galkin.jpg" />
+    <Content Include="Lehti\2010\2010-4-jarvinen1.html" />
+    <Content Include="Lehti\2010\2010-4-jarvinen2.html" />
+    <Content Include="Lehti\2010\2010-4-laine.html" />
+    <Content Include="Lehti\2010\2010-4-thumbnail.jpg" />
+    <Content Include="Lehti\2010\2010-4.jpg" />
+    <Content Include="Lehti\2010\2010-5-galkin.html" />
+    <Content Include="Lehti\2010\2010-5-laine.html" />
+    <Content Include="Lehti\2010\2010-5-leinivaara.html" />
+    <Content Include="Lehti\2010\2010-5-salmi.html" />
+    <Content Include="Lehti\2010\2010-5-thumbnail.jpg" />
+    <Content Include="Lehti\2010\2010-5.jpg" />
+    <Content Include="Lehti\2010\index.html" />
+    <Content Include="Lehti\2011\2011-1-heinonen.html" />
+    <Content Include="Lehti\2011\2011-1-heinonen.jpg" />
+    <Content Include="Lehti\2011\2011-1-jarvinen1.html" />
+    <Content Include="Lehti\2011\2011-1-jarvinen2.html" />
+    <Content Include="Lehti\2011\2011-1-jarvinen3.html" />
+    <Content Include="Lehti\2011\2011-1-jarvinen3.jpg" />
+    <Content Include="Lehti\2011\2011-1-thumbnail.jpg" />
+    <Content Include="Lehti\2011\2011-1.jpg" />
+    <Content Include="Lehti\2011\2011-2-hemmo.html" />
+    <Content Include="Lehti\2011\2011-2-hemmo.jpg" />
+    <Content Include="Lehti\2011\2011-2-jarvinen1.html" />
+    <Content Include="Lehti\2011\2011-2-jarvinen2.html" />
+    <Content Include="Lehti\2011\2011-2-jarvinen2.jpg" />
+    <Content Include="Lehti\2011\2011-2-thumbnail.jpg" />
+    <Content Include="Lehti\2011\2011-2.jpg" />
+    <Content Include="Lehti\2011\2011-3.jpg" />
+    <Content Include="Lehti\2011\2011-4.jpg" />
+    <Content Include="Lehti\2011\2011-5.jpg" />
+    <Content Include="Lehti\2011\default.htm" />
+    <Content Include="Lehti\2012\2012-1.jpg" />
+    <Content Include="Lehti\2012\2012-2.jpg" />
+    <Content Include="Lehti\2012\2012-3.png" />
+    <Content Include="Lehti\2012\2012-4.png" />
+    <Content Include="Lehti\2013\2013-1.png" />
+    <Content Include="Lehti\2013\2013-2.png" />
+    <Content Include="Lehti\2013\2013-3.png" />
+    <Content Include="Lehti\2013\2013-4.png" />
+    <Content Include="Lehti\2014\2014-1.png" />
+    <Content Include="Lehti\2014\2014-2.png" />
+    <Content Include="Lehti\2014\2014-3.png" />
+    <Content Include="Lehti\2014\2014-4.png" />
+    <Content Include="Lehti\2015\2015-1.png" />
+    <Content Include="Lehti\2015\2015-2.png" />
+    <Content Include="Lehti\2015\2015-3.png" />
+    <Content Include="Lehti\2015\2015-4.png" />
+    <Content Include="Lehti\2016\2016-1.png" />
+    <Content Include="Lehti\2016\2016-2.png" />
+    <Content Include="Lehti\2016\2016-3.png" />
+    <Content Include="main.css" />
+    <Content Include="menu.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaJaSokratesPalkinnotEI.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2011.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2012.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2013.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2014.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2015.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinnot.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2011.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2012.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2013.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2014.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2015.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2016.aspx" />
+    <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinnot.aspx" />
+    <Content Include="Toiminta\NilsMustelinRahasto.aspx" />
+    <Content Include="Toiminta\SkepsiksenHaasteJaStipendi.aspx" />
+    <Content Include="Toiminta\SkepsiksenMyyntituotteet.aspx" />
+    <Content Include="Toiminta\Tapahtumat.aspx" />
+    <Content Include="Toiminta\Uutiset.aspx" />
+    <Content Include="Yhdistys\AnnaPalautetta.aspx" />
+    <Content Include="Yhdistys\Henkilohistoria.aspx" />
+    <Content Include="Yhdistys\LiitySkepsiksenJaseneksi.aspx" />
+    <Content Include="Yhdistys\MikaSkepsisOn.aspx" />
+    <Content Include="Yhdistys\Saannot.aspx" />
+    <Content Include="Yhdistys\SkepsisInEnglish.aspx" />
+    <Content Include="Yhdistys\SkepsisPaSvenska.aspx" />
+    <Content Include="Yhdistys\Yhteystiedot.aspx" />
+    <None Include="bundleconfig.json" />
+    <Content Include="fonts\fontawesome-webfontba72.eot" />
+    <Content Include="fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="fonts\fontawesome-webfontba72.woff" />
+    <Content Include="fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Jutut\kysy_ja_kyseenalaista_mustavalkoinen.pdf" />
+    <Content Include="Jutut\kysy_ja_kyseenalaista_opettajalle.pdf" />
+    <Content Include="Jutut\kysy_ja_kyseenalaista_varillinen.pdf" />
+    <Content Include="Jutut\maasateilyraportti.pdf" />
+    <Content Include="Lehti\1988\01-skeptikko.pdf" />
+    <Content Include="Lehti\1988\02-skeptikko.pdf" />
+    <Content Include="Lehti\1988\03-skeptikko.pdf" />
+    <Content Include="Lehti\1988\04-skeptikko.pdf" />
+    <Content Include="Lehti\1988\05-skeptikko.pdf" />
+    <Content Include="Lehti\1988\06-skeptikko.pdf" />
+    <Content Include="Lehti\1988\07-skeptikko.pdf" />
+    <Content Include="Lehti\1988\08-skeptikko.pdf" />
+    <Content Include="Lehti\1988\09-skeptikko.pdf" />
+    <Content Include="Lehti\1988\10-skeptikko.pdf" />
+    <Content Include="Lehti\1988\11-skeptikko.pdf" />
+    <Content Include="Lehti\1988\12-13-skeptikko.pdf" />
+    <Content Include="Lehti\1988\14-skeptikko.pdf" />
+    <Content Include="Lehti\1988\15-skeptikko.pdf" />
+    <Content Include="Lehti\1989\01-skeptikko.pdf" />
+    <Content Include="Lehti\1989\02-skeptikko.pdf" />
+    <Content Include="Lehti\1989\03-skeptikko.pdf" />
+    <Content Include="Lehti\1989\04-skeptikko.pdf" />
+    <Content Include="Lehti\1989\05-skeptikko.pdf" />
+    <Content Include="Lehti\1989\06-skeptikko.pdf" />
+    <Content Include="Lehti\1989\07-skeptikko.pdf" />
+    <Content Include="Lehti\1989\08-skeptikko.pdf" />
+    <Content Include="Lehti\1989\09-skeptikko.pdf" />
+    <Content Include="Lehti\1989\10-skeptikko.pdf" />
+    <Content Include="Lehti\1989\11-skeptikko.pdf" />
+    <Content Include="Lehti\1989\12-13-skeptikko.pdf" />
+    <Content Include="Lehti\1989\14-skeptikko.pdf" />
+    <Content Include="Lehti\1989\15-skeptikko.pdf" />
+    <Content Include="Lehti\1990\01-skeptikko.pdf" />
+    <Content Include="Lehti\1990\02-skeptikko.pdf" />
+    <Content Include="Lehti\1990\03-skeptikko.pdf" />
+    <Content Include="Lehti\1990\04-skeptikko.pdf" />
+    <Content Include="Lehti\1990\05-skeptikko.pdf" />
+    <Content Include="Lehti\1990\06-skeptikko.pdf" />
+    <Content Include="Lehti\1990\07-skeptikko.pdf" />
+    <Content Include="Lehti\1990\08-skeptikko.pdf" />
+    <Content Include="Lehti\1990\09-skeptikko.pdf" />
+    <Content Include="Lehti\1990\10-skeptikko.pdf" />
+    <Content Include="Lehti\1990\11-skeptikko.pdf" />
+    <Content Include="Lehti\1990\12-13-skeptikko.pdf" />
+    <Content Include="Lehti\1990\14-skeptikko.pdf" />
+    <Content Include="Lehti\1990\15-skeptikko.pdf" />
+    <Content Include="Lehti\1991\01-skeptikko.pdf" />
+    <Content Include="Lehti\1991\02-skeptikko.pdf" />
+    <Content Include="Lehti\1991\03-skeptikko.pdf" />
+    <Content Include="Lehti\1991\04-skeptikko.pdf" />
+    <Content Include="Lehti\1991\05-skeptikko.pdf" />
+    <Content Include="Lehti\1991\06-skeptikko.pdf" />
+    <Content Include="Lehti\1991\07-skeptikko.pdf" />
+    <Content Include="Lehti\1991\08-skeptikko.pdf" />
+    <Content Include="Lehti\1991\09-skeptikko.pdf" />
+    <Content Include="Lehti\1991\10-skeptikko.pdf" />
+    <Content Include="Lehti\1991\11-skeptikko.pdf" />
+    <Content Include="Lehti\1991\12-13-skeptikko.pdf" />
+    <Content Include="Lehti\1991\14-skeptikko.pdf" />
+    <Content Include="Lehti\1991\15-skeptikko.pdf" />
+    <Content Include="Lehti\1992\01-skeptikko.pdf" />
+    <Content Include="Lehti\1992\02-skeptikko.pdf" />
+    <Content Include="Lehti\1992\03-skeptikko.pdf" />
+    <Content Include="Lehti\1992\04-skeptikko.pdf" />
+    <Content Include="Lehti\1992\05-skeptikko.pdf" />
+    <Content Include="Lehti\1992\06-skeptikko.pdf" />
+    <Content Include="Lehti\1992\07-skeptikko.pdf" />
+    <Content Include="Lehti\1992\08-skeptikko.pdf" />
+    <Content Include="Lehti\1992\09-skeptikko.pdf" />
+    <Content Include="Lehti\1992\10-skeptikko.pdf" />
+    <Content Include="Lehti\1992\11-skeptikko.pdf" />
+    <Content Include="Lehti\1992\12-13-skeptikko.pdf" />
+    <Content Include="Lehti\1992\14-skeptikko.pdf" />
+    <Content Include="Lehti\1992\15-skeptikko.pdf" />
+    <Content Include="Lehti\1993\1993-1-skeptikko.pdf" />
+    <Content Include="Lehti\1993\1993-2-skeptikko.pdf" />
+    <Content Include="Lehti\1993\1993-3-skeptikko.pdf" />
+    <Content Include="Lehti\1993\1993-4-skeptikko.pdf" />
+    <Content Include="Lehti\1994\1994-1-skeptikko.pdf" />
+    <Content Include="Lehti\1994\1994-2-skeptikko.pdf" />
+    <Content Include="Lehti\1994\1994-3-skeptikko.pdf" />
+    <Content Include="Lehti\1994\1994-4-skeptikko.pdf" />
+    <Content Include="Lehti\1995\1995-1-skeptikko.pdf" />
+    <Content Include="Lehti\1995\1995-2-skeptikko.pdf" />
+    <Content Include="Lehti\1995\1995-3-skeptikko.pdf" />
+    <Content Include="Lehti\1995\1995-4-skeptikko.pdf" />
+    <Content Include="Lehti\1996\1996-1-skeptikko.pdf" />
+    <Content Include="Lehti\1996\1996-2-skeptikko.pdf" />
+    <Content Include="Lehti\1996\1996-3-skeptikko.pdf" />
+    <Content Include="Lehti\1996\1996-4-skeptikko.pdf" />
+    <Content Include="Lehti\1997\1997-1-skeptikko.pdf" />
+    <Content Include="Lehti\1997\1997-2-skeptikko.pdf" />
+    <Content Include="Lehti\1997\1997-3-skeptikko.pdf" />
+    <Content Include="Lehti\1997\1997-4-skeptikko.pdf" />
+    <Content Include="Lehti\1998\1998-1-skeptikko.pdf" />
+    <Content Include="Lehti\1998\1998-2-skeptikko.pdf" />
+    <Content Include="Lehti\1998\1998-3-skeptikko.pdf" />
+    <Content Include="Lehti\1998\1998-4-skeptikko.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s04-10.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s12-13.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s14-16.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s17-19.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s20-21.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s22-23.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko+s26-29.pdf" />
+    <Content Include="Lehti\1999\1999-1-skeptikko.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s04-08.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s10-12.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s13-17.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s19-21.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s22-23.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s26-28.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko+s29-30.pdf" />
+    <Content Include="Lehti\1999\1999-2-skeptikko.pdf" />
+    <Content Include="Lehti\1999\1999-3-skeptikko+s04-06.pdf" />
+    <Content Include="Lehti\1999\1999-3-skeptikko+s08-11.pdf" />
+    <Content Include="Lehti\1999\1999-3-skeptikko+s12-16.pdf" />
+    <Content Include="Lehti\1999\1999-3-skeptikko+s18-27.pdf" />
+    <Content Include="Lehti\1999\1999-3-skeptikko.pdf" />
+    <Content Include="Lehti\1999\1999-4-skeptikko+s04-08.pdf" />
+    <Content Include="Lehti\1999\1999-4-skeptikko+s10-18.pdf" />
+    <Content Include="Lehti\1999\1999-4-skeptikko+s20-23.pdf" />
+    <Content Include="Lehti\1999\1999-4-skeptikko+s24-27.pdf" />
+    <Content Include="Lehti\1999\1999-4-skeptikko.pdf" />
+    <Content Include="Lehti\2000\2000-1-skeptikko.pdf" />
+    <Content Include="Lehti\2000\2000-2-skeptikko.pdf" />
+    <Content Include="Lehti\2000\2000-3-skeptikko.pdf" />
+    <Content Include="Lehti\2000\2000-4-skeptikko.pdf" />
+    <Content Include="Lehti\2001\2001-1-skeptikko.pdf" />
+    <Content Include="Lehti\2001\2001-2-skeptikko.pdf" />
+    <Content Include="Lehti\2001\2001-3-skeptikko.pdf" />
+    <Content Include="Lehti\2001\2001-4-skeptikko.pdf" />
+    <Content Include="Lehti\2002\2002-1-skeptikko.pdf" />
+    <Content Include="Lehti\2002\2002-2-skeptikko.pdf" />
+    <Content Include="Lehti\2002\2002-3-skeptikko.pdf" />
+    <Content Include="Lehti\2002\2002-4-skeptikko.pdf" />
+    <Content Include="Lehti\2003\2003-1-skeptikko.pdf" />
+    <Content Include="Lehti\2003\2003-2-skeptikko.pdf" />
+    <Content Include="Lehti\2003\2003-3-skeptikko.pdf" />
+    <Content Include="Lehti\2003\2003-4-skeptikko.pdf" />
+    <Content Include="Lehti\2004\2004-1-skeptikko.pdf" />
+    <Content Include="Lehti\2004\2004-2-skeptikko.pdf" />
+    <Content Include="Lehti\2004\2004-3-skeptikko.pdf" />
+    <Content Include="Lehti\2004\2004-4-skeptikko.pdf" />
+    <Content Include="Lehti\2005\2005-1-skeptikko.pdf" />
+    <Content Include="Lehti\2005\2005-2-skeptikko.pdf" />
+    <Content Include="Lehti\2005\2005-3-skeptikko.pdf" />
+    <Content Include="Lehti\2005\2005-4-skeptikko.pdf" />
+    <Content Include="Lehti\2006\2006-1-skeptikko.pdf" />
+    <Content Include="Lehti\2006\2006-2-skeptikko.pdf" />
+    <Content Include="Lehti\2006\2006-3-skeptikko.pdf" />
+    <Content Include="Lehti\2006\2006-4-skeptikko.pdf" />
+    <Content Include="Lehti\2007\2007-1-skeptikko.pdf" />
+    <Content Include="Lehti\2007\2007-2-skeptikko.pdf" />
+    <Content Include="Lehti\2007\2007-3-skeptikko.pdf" />
+    <Content Include="Lehti\2007\2007-4-skeptikko.pdf" />
+    <Content Include="Lehti\2008\2008-1-skeptikko.pdf" />
+    <Content Include="Lehti\2008\2008-2-skeptikko.pdf" />
+    <Content Include="Lehti\2008\2008-3-skeptikko.pdf" />
+    <Content Include="Lehti\2008\2008-4-skeptikko.pdf" />
+    <Content Include="Lehti\2009\2009-1-skeptikko.pdf" />
+    <Content Include="Lehti\2009\2009-2-skeptikko.pdf" />
+    <Content Include="Lehti\2009\2009-3-skeptikko.pdf" />
+    <Content Include="Lehti\2009\2009-4-skeptikko.pdf" />
+    <Content Include="Lehti\2009\2009-5-skeptikko.pdf" />
+    <Content Include="Lehti\2009\c.pdf" />
+    <Content Include="Lehti\2010\2010-1-skeptikko.pdf" />
+    <Content Include="Lehti\2010\2010-2-skeptikko.pdf" />
+    <Content Include="Lehti\2010\2010-3-skeptikko.pdf" />
+    <Content Include="Lehti\2010\2010-4-skeptikko.pdf" />
+    <Content Include="Lehti\2010\2010-5-skeptikko.pdf" />
+    <Content Include="Lehti\2011\2011-1-skeptikko.pdf" />
+    <Content Include="Lehti\2011\2011-2-skeptikko.pdf" />
+    <Content Include="Lehti\2011\2011-3-skeptikko.pdf" />
+    <Content Include="Lehti\2011\2011-4-skeptikko.pdf" />
+    <Content Include="Lehti\2011\2011-5-skeptikko.pdf" />
+    <Content Include="Lehti\2011\index.html old" />
+    <Content Include="Lehti\2011\Skeptikko-2011-3_Mita_NLP_on.pdf" />
+    <Content Include="Lehti\2011\Skeptikko-2011-3_Valetieteilija_Lysenko_ja_suomalaiset.pdf" />
+    <Content Include="Lehti\2011\Skeptikko-2011-4_Koiran_hamara_alkupera.pdf" />
+    <Content Include="Lehti\2011\Skeptikko-2011-4_Vastaus_psykiatri_Lauerman_NLP-kritiikkiin.pdf" />
+    <Content Include="Lehti\2011\Skeptikko-2011-5_Huijauksia_Porvoon_mitalla.pdf" />
+    <Content Include="Lehti\2011\Skeptikko-2011-5_Paakirjoitus.pdf" />
+    <Content Include="Lehti\2012\2012-1-skeptikko.pdf" />
+    <Content Include="Lehti\2012\2012-2-skeptikko.pdf" />
+    <Content Include="Lehti\2012\2012-3-skeptikko.pdf" />
+    <Content Include="Lehti\2012\2012-4-skeptikko.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-1_Hypnoosiohjelma_lupaa_kiusallisia_tilanteita_ja_kuvitteellisia_konflikteja.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-1_Kevatretki_2012.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-1_Paakirjoitus.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-1_Uskomushoidot_Suojaako_laki_kuluttajaa.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-1_Wiseman_kirjailmoitus.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-2_Paakirjoitus.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-2_Taikavarvulla_tohtoriksi.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-2_Ufovalokuvauskilpailu.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-3_kahvinmyynnilla_bemarin_omistajaksi.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-3_kiuruveden_ufo_valokuvauskisan_voittaja.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-3_myytinmurtaja_twitterissa.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-3_skeptikko_pakeni_intiasta_suomeen.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-4_Huuhaa_palkinto_valkee_oylle.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-4_Myytti_kolestrolimyytista.pdf" />
+    <Content Include="Lehti\2012\Skeptikko-2012-4_Paakirjoitus.pdf" />
+    <Content Include="Lehti\2013\2013-1-skeptikko.pdf" />
+    <Content Include="Lehti\2013\2013-2-skeptikko.pdf" />
+    <Content Include="Lehti\2013\2013-3-skeptikko.pdf" />
+    <Content Include="Lehti\2013\2013-4-skeptikko.pdf" />
+    <Content Include="Lehti\2013\greatrakes_viitteet.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-1_ilmastonmuutos_on_taalla.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-1_kevatretki_2013.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-1_lisaaineet_ruoassa-turha_huolenaihe.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-1_mina_skeptikko.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-2_kovaa_pelia_bostonissa.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-2_lahdekirjallisuutta.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-2_miksi_ihmiset_uskovat_yliluonnolliseen.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-2_paakirjoitus.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-3_Atlantis_tarusta_tieteeksi.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-3_Olen_mutta_en_ole.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-3_Rokottamisen_perusteet.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-4_elamme_salaliittoteorioiden_kulta-aikaa.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-4_lukijan pakina kalojen avaruus.pdf" />
+    <Content Include="Lehti\2013\Skeptikko-2013-4_vaitoskirja_Skepsiksen_toiminnasta.pdf" />
+    <Content Include="Lehti\2014\2014-1-skeptikko.pdf" />
+    <Content Include="Lehti\2014\2014-2-skeptikko.pdf" />
+    <Content Include="Lehti\2014\2014-3-skeptikko.pdf" />
+    <Content Include="Lehti\2014\2014-4-skeptikko.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-1_Denialism_ei_ole_oikeaa_skeptisyytta.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-1_Uusia_homppatesteja_kaupan.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-1_Viela_kerran_rokotekritiikista-Viitteet.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-1_Viela_kerran_rokotekritiikista.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-2_Miksi_uskoa_ihmeisiin.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-2_Mina_skeptikko.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-2_Puheenjohtajan_palsta.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-3_asevarustelua_verkossa.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-3_MH17_ja_vastaamattomat_kysymykset.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-3_mina_skeptikko.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-3_onks_tietoo.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-3_puheenjohtajan_palsta.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-4_antti_heikkila_ja_suuret_puheet.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-4_puheenjohtajan_palsta.pdf" />
+    <Content Include="Lehti\2014\Skeptikko-2014-4_rajatiedon_messuilla_skeptisessa_hengessa.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-1_minä_skeptikko.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-1_Rauni-Leena_Luukanen-Kilde.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-1_salaliittoteoriat_pulppusivat_esiin.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-1_te_ajatte_sensuuria.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-2_Markus_Sandelin_mina_skeptikko.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-2_puheenjohtajan_palsta.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-2_skepsis_palkitsi_tiede-lehden.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-2_skeptikko_soluttautui_homeopaattien_rokoteiltaan - POISTETTU.xxx" />
+    <Content Include="Lehti\2015\Skeptikko-2015-3_Fasilitoidun_kommunikaation_nykytila_Onko_järki_viimein_voittamassa.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-3_Miksi_paahtoleivästä_löytyy_Jeesus.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-3_Puheenjohtajan_palsta.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-4_huuhaa-palkinto_tv-ennustuksille.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-4_korjattavaa_maailmassa.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-4_skeptikoita_ja_skeptikoita.pdf" />
+    <Content Include="Lehti\2015\Skeptikko-2015-4_tiina_raevaaralle_tiedonjulkistamisen_valtionpalkinto.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-1_kaarinliina_on_aito.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-1_myllykankaan_lausumat-old.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-1_myllykankaan_lausumat.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-1_paakirjoitus.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-1_skepsiksen_kevatretki.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-2_mita_ajatella_kiropraktiikasta.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-2_skeptikkko_raitistui_ilman_vippaskonsteja.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-2_skeptikot_kummitusjahdissa.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-3_kapinoiva_tohtoripunkkari_evoluution_asialla.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-3_kiistelty_glyfosaatti.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-3_pokemon_go_ja_pako_todellisuudesta.pdf" />
+    <Content Include="Lehti\2016\Skeptikko-2016-3_skeptikolle_yksi_myyntipiste_lisaa.pdf" />
+    <Content Include="Lehti\2016\vastine-pekka-louhiala-old.pdf" />
+    <Content Include="Lehti\2016\vastine-pekka-louhiala.pdf" />
+    <Content Include="email.key" />
+    <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="storage.key" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Sivut\Etusivu.cshtml" />
+    <Content Include="Views\Sivut\MikaSkepsisOn.cshtml" />
+    <Content Include="Views\Sivut\SkepsisPaSvenska.cshtml" />
+    <Content Include="Views\Sivut\SkepsisInEnglish.cshtml" />
+    <Content Include="Views\Sivut\Henkilohistoria.cshtml" />
+    <Content Include="Views\Sivut\YhdistyksenSaannot.cshtml" />
+    <Content Include="Views\Sivut\Yhteystiedot.cshtml" />
+    <Content Include="Views\Sivut\AnnaPalautetta.cshtml" />
+    <Content Include="Views\Sivut\LiitySkepsiksenJaseneksi.cshtml" />
+    <Content Include="Views\Sivut\Uutiset.cshtml" />
+    <Content Include="Views\Sivut\Tapahtumat.cshtml" />
+    <Content Include="Views\Sivut\HuuhaaJaSokratesPalkinnot.cshtml" />
+    <Content Include="Views\Sivut\SkepsiksenHaasteJaStipendi.cshtml" />
+    <Content Include="Views\Sivut\NilsMustelinRahasto.cshtml" />
+    <Content Include="Views\Sivut\SkeptikkoLehti.cshtml" />
+    <Content Include="Views\Sivut\Artikkelit.cshtml" />
+    <Content Include="Views\Sivut\AudioJaVideoTallenteet.cshtml" />
+    <Content Include="Views\Sivut\Linkkeja.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SivutController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Haku.aspx.cs">
+      <DependentUpon>Haku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Haku.aspx.designer.cs">
+      <DependentUpon>Haku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\EmailHelpers.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Julkaisuja\Artikkelit.aspx.cs">
+      <DependentUpon>Artikkelit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Artikkelit.aspx.designer.cs">
+      <DependentUpon>Artikkelit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\AudioJaVideoTallenteet.aspx.cs">
+      <DependentUpon>AudioJaVideoTallenteet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\AudioJaVideoTallenteet.aspx.designer.cs">
+      <DependentUpon>AudioJaVideoTallenteet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Linkkeja.aspx.cs">
+      <DependentUpon>Linkkeja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Linkkeja.aspx.designer.cs">
+      <DependentUpon>Linkkeja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2011.aspx.cs">
+      <DependentUpon>Skeptikko2011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2011.aspx.designer.cs">
+      <DependentUpon>Skeptikko2011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2012.aspx.cs">
+      <DependentUpon>Skeptikko2012.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2012.aspx.designer.cs">
+      <DependentUpon>Skeptikko2012.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2013.aspx.cs">
+      <DependentUpon>Skeptikko2013.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikko2013.aspx.designer.cs">
+      <DependentUpon>Skeptikko2013.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2014.aspx.cs">
+      <DependentUpon>Skeptikkolehti2014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2014.aspx.designer.cs">
+      <DependentUpon>Skeptikkolehti2014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2015.aspx.cs">
+      <DependentUpon>Skeptikkolehti2015.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2015.aspx.designer.cs">
+      <DependentUpon>Skeptikkolehti2015.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2016.aspx.cs">
+      <DependentUpon>Skeptikkolehti2016.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\Skeptikkolehti2016.aspx.designer.cs">
+      <DependentUpon>Skeptikkolehti2016.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Julkaisuja\SkeptikkoLehti.aspx.cs">
+      <DependentUpon>SkeptikkoLehti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Julkaisuja\SkeptikkoLehti.aspx.designer.cs">
+      <DependentUpon>SkeptikkoLehti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Keskustelu\KeskustelusivustonSaannot.aspx.cs">
+      <DependentUpon>KeskustelusivustonSaannot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Keskustelu\KeskustelusivustonSaannot.aspx.designer.cs">
+      <DependentUpon>KeskustelusivustonSaannot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Magazine.cs" />
+    <Compile Include="Models\MagazineArticle.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Prize.cs" />
+    <Compile Include="Models\PublicEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaJaSokratesPalkinnotEI.aspx.cs">
+      <DependentUpon>HuuhaaJaSokratesPalkinnotEI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaJaSokratesPalkinnotEI.aspx.designer.cs">
+      <DependentUpon>HuuhaaJaSokratesPalkinnotEI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2011.aspx.cs">
+      <DependentUpon>HuuhaaPalkinto2011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2011.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinto2011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2012.aspx.cs">
+      <DependentUpon>HuuhaaPalkinto2012.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2012.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinto2012.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2013.aspx.cs">
+      <DependentUpon>HuuhaaPalkinto2013.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2013.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinto2013.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2014.aspx.cs">
+      <DependentUpon>HuuhaaPalkinto2014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2014.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinto2014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2015.aspx.cs">
+      <DependentUpon>HuuhaaPalkinto2015.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2015.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinto2015.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinnot.aspx.cs">
+      <DependentUpon>SokratesPalkinnot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinnot.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinnot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2011.aspx.cs">
+      <DependentUpon>SokratesPalkinto2011.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2011.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2011.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2012.aspx.cs">
+      <DependentUpon>SokratesPalkinto2012.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2012.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2012.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2013.aspx.cs">
+      <DependentUpon>SokratesPalkinto2013.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2013.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2013.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2014.aspx.cs">
+      <DependentUpon>SokratesPalkinto2014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2014.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2015.aspx.cs">
+      <DependentUpon>SokratesPalkinto2015.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2015.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2015.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2016.aspx.cs">
+      <DependentUpon>SokratesPalkinto2016.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\SokratesPalkinto2016.aspx.designer.cs">
+      <DependentUpon>SokratesPalkinto2016.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinnot.aspx.cs">
+      <DependentUpon>HuuhaaPalkinnot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinnot.aspx.designer.cs">
+      <DependentUpon>HuuhaaPalkinnot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\NilsMustelinRahasto.aspx.cs">
+      <DependentUpon>NilsMustelinRahasto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\NilsMustelinRahasto.aspx.designer.cs">
+      <DependentUpon>NilsMustelinRahasto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\SkepsiksenHaasteJaStipendi.aspx.cs">
+      <DependentUpon>SkepsiksenHaasteJaStipendi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\SkepsiksenHaasteJaStipendi.aspx.designer.cs">
+      <DependentUpon>SkepsiksenHaasteJaStipendi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\SkepsiksenMyyntituotteet.aspx.cs">
+      <DependentUpon>SkepsiksenMyyntituotteet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\SkepsiksenMyyntituotteet.aspx.designer.cs">
+      <DependentUpon>SkepsiksenMyyntituotteet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\Tapahtumat.aspx.cs">
+      <DependentUpon>Tapahtumat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\Tapahtumat.aspx.designer.cs">
+      <DependentUpon>Tapahtumat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Toiminta\Uutiset.aspx.cs">
+      <DependentUpon>Uutiset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Toiminta\Uutiset.aspx.designer.cs">
+      <DependentUpon>Uutiset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\LastPrizesViewModel.cs" />
+    <Compile Include="ViewModels\MagazinesViewModel.cs" />
+    <Compile Include="ViewModels\MagazineViewModel.cs" />
+    <Compile Include="Yhdistys\AnnaPalautetta.aspx.cs">
+      <DependentUpon>AnnaPalautetta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\AnnaPalautetta.aspx.designer.cs">
+      <DependentUpon>AnnaPalautetta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\Henkilohistoria.aspx.cs">
+      <DependentUpon>Henkilohistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\Henkilohistoria.aspx.designer.cs">
+      <DependentUpon>Henkilohistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\LiitySkepsiksenJaseneksi.aspx.cs">
+      <DependentUpon>LiitySkepsiksenJaseneksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\LiitySkepsiksenJaseneksi.aspx.designer.cs">
+      <DependentUpon>LiitySkepsiksenJaseneksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\MikaSkepsisOn.aspx.cs">
+      <DependentUpon>MikaSkepsisOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\MikaSkepsisOn.aspx.designer.cs">
+      <DependentUpon>MikaSkepsisOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\Saannot.aspx.cs">
+      <DependentUpon>Saannot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\Saannot.aspx.designer.cs">
+      <DependentUpon>Saannot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\SkepsisInEnglish.aspx.cs">
+      <DependentUpon>SkepsisInEnglish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\SkepsisInEnglish.aspx.designer.cs">
+      <DependentUpon>SkepsisInEnglish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\SkepsisPaSvenska.aspx.cs">
+      <DependentUpon>SkepsisPaSvenska.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\SkepsisPaSvenska.aspx.designer.cs">
+      <DependentUpon>SkepsisPaSvenska.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yhdistys\Yhteystiedot.aspx.cs">
+      <DependentUpon>Yhteystiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yhdistys\Yhteystiedot.aspx.designer.cs">
+      <DependentUpon>Yhteystiedot.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Sivut\KeskustelusivustonSaannot.cshtml" />
+    <Content Include="Views\Sivut\SkeptikkoLehdet.cshtml" />
+    <Content Include="Views\Sivut\HuuhaaPalkinto.cshtml" />
+    <Content Include="Views\Sivut\SokratesPalkinto.cshtml" />
+    <Content Include="Views\Sivut\SokratesPalkinnot.cshtml" />
+    <Content Include="Views\Sivut\HuuhaaPalkinnot.cshtml" />
+    <Content Include="Views\Shared\_Lehti.cshtml" />
+    <Content Include="Views\Sivut\Haku.cshtml" />
+    <Content Include="Views\Shared\_ValidationSummary.cshtml" />
+    <Content Include="Views\Shared\_HuuhaaPrize.cshtml" />
+    <Content Include="Views\Shared\_SokratesPrize.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4693</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4693/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

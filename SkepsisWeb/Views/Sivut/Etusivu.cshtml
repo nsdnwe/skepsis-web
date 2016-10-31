@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Etusivu";
+}
+@using SkepsisWeb.Helpers
+@model SkepsisWeb.ViewModels.IndexViewModel
+
+<div class="row">
+    <div class="col-md-6 text-left data">
+        <h1>Mikä on Skepsis?</h1>
+        <p><strong>Skepsis ry</strong> on suomalaisten skeptikkojen vuonna 1987 perustama tieteellinen yhdistys.</p>
+        <p>
+            <a href="">Skepsiksen sääntöjen</a> mukaan yhdistyksen tarkoitus on
+        </p>
+        <ul>
+            <li>Edistää kriittistä ajattelua, <a href="">tieteellisen</a> tiedon hankintamenetelmien opetusta sekä tieteeseen ja järkeen perustuvaa käsitystä maailmasta.</li>
+            <li>Edistää kiisteltyjen tai erityisen poikkeuksellisten väitteiden tieteellistä tarkastelua.</li>
+            <li class="">Edistää keskustelua tieteelliseen maailmankuvaan liittyvistä tärkeistä aiheista.</li>
+            <li class="">Ylläpitää tällaisesta toiminnasta kiinnostuneiden ihmisten verkostoa, järjestää kokouksia ja keskustelu- ja luentotilaisuuksia sekä harjoittaa tiedotus- ja valistustoimintaa.</li>
+        </ul>
+        <p>
+            Yhdistys on poliittisesti, aatteellisesti sekä uskonnollisesti sitoutumaton.
+        </p>
+    </div>
+    <div class="col-md-6 second text-left">
+        <h1>Uutisia</h1>
+        @foreach (var item in Model.Articles) {
+            <a href="/Sivut/Uutiset"><h4>@item.ArticleDatetime.ToString("dd.MM.yyyy") @item.Title</h4></a>
+            <p>@Html.FormatBody(item.Ingress)</p>
+            <div style="margin-bottom:20px"></div>
+        }
+
+        @*<a href=""><h4>23.10.2016 Käyttökatkos</h4></a>
+            <p>Skepsis ry:n palvelimen rikkoutumisen vuoksi palvelussa on ollut käyttökatkos. Parhaillaan palvelua siirretään uuteen alustaan. Keskustelusivut ovat poissa käytöstä lokakuun loppuun asti.</p>
+            <a href=""><h4>28.09.2016 YLE: Silmänkääntäjä totuuden puolesta</h4></a>
+            <p>Totuus on mutkikas juttu, kertoo dokumentti huijareita paljastaneesta James Randista. Lue koko artikkeeli <a href="">täältä</a>.</p>
+            <a href=""><h4>23.06.2016 YLE Elävä arkisto: Uskomaton Randi testasi suomalaisen taikavarvun</h4></a>
+            <p>Dokumentti julkaistu YLE:n elävässä arkistossa: Järjestyksessään seitsemännet Rajatiedon messut pidettiin vuonna 1989 Helsingissä. Messuilla vieraili myös yhdysvaltalainen yliluonnollisten ilmiöiden epäilijä ja huijareiden paljastaja James Randi eli The Amazing Randi. A-studion raportissa seurattiin, kun Randi asettui testaamaan hankasalmelaisen taikavarvun todenmukaisuutta. Lue koko artikkeeli <a href="">täältä</a>.</p>
+            <a href=""><h4>06.04.2016 Sokrates-palkinto 2016</h4></a>
+            <p>Skepsis ry on myöntänyt vuoden 2016 Sokrates-palkinnon dosentti Minna Huotilaiselle aivotutkimuksen tulosten aktiivisesta esittelemisestä julkisuudessa ja tieteen äänen tuomisesta sosiaaliseen mediaan. Lue palkinnon perustelut <a href="">täältä</a>.</p>*@
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 text-left">
+        <h1>Huuhaa- ja Sokrates-palkinnot</h1>
+
+        <h4>Huuhaa-palkinto @Model.HuuhaaPrize.PrizeID</h4>
+        <p>@Model.HuuhaaPrize.HuuhaaPrizeLead <b>@Model.HuuhaaPrize.HuuhaaPrizeTitle</b> @Model.HuuhaaPrize.HuuhaaPrizeSubTitle</p>
+        <p>Lue palkinnon perustelut <a href="/Sivut/HuuhaaPalkinto/@Model.HuuhaaPrize.PrizeID">täältä.</a></p>
+
+        <h4>Sokrates-palkinto @Model.SokratesPrize.PrizeID</h4>
+        <p>@Model.SokratesPrize.SokratesPrizeLead <b>@Model.SokratesPrize.SokratesPrizeTitle</b> @Model.SokratesPrize.SokratesPrizeSubTitle</p>
+        <p>Lue palkinnon perustelut <a href="/Sivut/SokratesPalkinto/@Model.SokratesPrize.PrizeID">täältä.</a></p>
+    </div>
+    <div class="col-md-6 second text-left">
+        <h1>Seuraavat tapahtumat</h1>
+        @foreach (var item in Model.PublicEvents) {
+            <a href="/Sivut/Tapahtumat">
+                <h4>
+                    @item.EventDatetime.ToString("dd.MM.yyyy") @item.Title
+                    <i>@item.City</i>
+                </h4>
+            </a>
+            <p>@Html.FormatBody(item.Ingress)</p>
+            <div style="margin-bottom:20px"></div>
+        }
+    </div>
+</div>
+
+@Html.Partial("_Lehti", Model.MagazineViewModel)
+
+@*<p class="text-right" style="margin-right:20px">
+    <a href="http://get.adobe.com/fi/reader/">Lataa Adobe Reader tästä</a>
+</p>*@
+
+
+<div class="row" style="margin-top:40px">
+    <div class="col-md-4" style="text-align:left"><a href="http://www.facebook.com/home.php?#!/groups/skepsisry/"><img alt="" src="/img/facebook.jpg" style="width: 100px;"></a></div>
+    <div class="col-md-4 center-block"><img class="footimg2" alt="" src="/img/liity.png"></div>
+    <div class="col-md-4" style="text-align:right"><a href="">In English</a>&nbsp;•&nbsp;<a href=""> På Svenska</a></div>
+</div>
