@@ -765,8 +765,10 @@
     <Content Include="Jutut\virhelista.html" />
     <Content Include="Jutut\walle.html" />
     <Content Include="Keskustelu\KeskustelusivustonSaannot.aspx" />
+    <Content Include="Kuvat\back.png" />
     <Content Include="Kuvat\facebook.png" />
     <Content Include="Kuvat\skepsis-ry.100x20.png" />
+    <Content Include="Kuvat\top.png" />
     <Content Include="Kuvat\t_mini-b.png" />
     <Content Include="Kuvat\Vanhojen Skeptikkojen legacy.txt" />
     <Content Include="Lehti\1988\01-skeptikko-thumbnail.png" />
