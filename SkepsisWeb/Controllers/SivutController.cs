@@ -44,6 +44,9 @@ namespace SkepsisWeb.Controllers {
             return View();
         }
         public ActionResult Yhteystiedot() {
+            return View("Yhteystiedot2");
+        }
+        public ActionResult Yhteystiedot2() {
             return View();
         }
         public ActionResult AnnaPalautetta() {

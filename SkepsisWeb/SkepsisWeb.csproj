@@ -1795,7 +1795,6 @@
     <Content Include="Views\Sivut\SkepsisInEnglish.cshtml" />
     <Content Include="Views\Sivut\Henkilohistoria.cshtml" />
     <Content Include="Views\Sivut\YhdistyksenSaannot.cshtml" />
-    <Content Include="Views\Sivut\Yhteystiedot.cshtml" />
     <Content Include="Views\Sivut\AnnaPalautetta.cshtml" />
     <Content Include="Views\Sivut\LiitySkepsiksenJaseneksi.cshtml" />
     <Content Include="Views\Sivut\Uutiset.cshtml" />
@@ -2123,6 +2122,8 @@
     <Content Include="Views\Shared\_ValidationSummary.cshtml" />
     <Content Include="Views\Shared\_HuuhaaPrize.cshtml" />
     <Content Include="Views\Shared\_SokratesPrize.cshtml" />
+    <Content Include="Views\Sivut\Yhteystiedot2.cshtml" />
+    <Content Include="Views\Sivut\Yhteystiedot.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
