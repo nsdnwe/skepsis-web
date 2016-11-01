@@ -103,7 +103,8 @@ namespace SkepsisWeb.Controllers {
             return View(articles);
         }
         public ActionResult Tapahtumat() {
-            var publicEvents = db.PublicEvents.Where(z => !z.Deleted && z.EventDatetime >= DateTime.UtcNow.AddYears(-1)).OrderBy(z => z.EventDatetime).Take(30).ToList();
+            var limit = DateTime.UtcNow.AddYears(-1);
+            var publicEvents = db.PublicEvents.Where(z => !z.Deleted && z.EventDatetime >= limit).OrderBy(z => z.EventDatetime).Take(30).ToList();
             return View(publicEvents);
         }
         public ActionResult HuuhaaJaSokratesPalkinnot() {
