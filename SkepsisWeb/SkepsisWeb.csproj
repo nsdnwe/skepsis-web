@@ -1502,6 +1502,7 @@
     <Content Include="Yhdistys\LiitySkepsiksenJaseneksi.aspx" />
     <Content Include="Yhdistys\MikaSkepsisOn.aspx" />
     <Content Include="Yhdistys\Saannot.aspx" />
+    <Content Include="Yhdistys\Sample.html" />
     <Content Include="Yhdistys\SkepsisInEnglish.aspx" />
     <Content Include="Yhdistys\SkepsisPaSvenska.aspx" />
     <Content Include="Yhdistys\Yhteystiedot.aspx" />
