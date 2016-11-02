@@ -19,31 +19,31 @@
             <form id="my-form" class="bs-example form-horizontal" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <div class="form-group">
-                        <label for="inputUserName" class="col-lg-3 control-label">Nimi</label>
-                        <div class="col-lg-9">
+                        <label for="inputUserName" class="col-lg-2 control-label">Nimi</label>
+                        <div class="col-lg-10">
                             @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputUserName" class="col-lg-3 control-label">Sähköpostiosoite</label>
-                        <div class="col-lg-9">
+                        <label for="inputUserName" class="col-lg-2 control-label">Sähköpostiosoite</label>
+                        <div class="col-lg-10">
                             @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputUserName" class="col-lg-3 control-label">Puhelinnumero</label>
-                        <div class="col-lg-9">
+                        <label for="inputUserName" class="col-lg-2 control-label">Puhelinnumero</label>
+                        <div class="col-lg-10">
                             @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputUserName" class="col-lg-3 control-label">Palaute</label>
-                        <div class="col-lg-9">
+                        <label for="inputUserName" class="col-lg-2 control-label">Palaute</label>
+                        <div class="col-lg-10">
                             @Html.TextAreaFor(model => model.Info, new { @class = "form-control", @id = "textArea", @style = "height:100px" })
                         </div>
                     </div>
                     <div style="width:100%; text-align:right">
-                        <button type="submit" class="btn btn-primary btn-normal" name="button" value="ok">Lähetä hakemus</button>
+                        <button type="submit" class="btn btn-primary btn-normal" name="button" value="ok">Lähetä</button>
                     </div>
                 </fieldset>
             </form>
