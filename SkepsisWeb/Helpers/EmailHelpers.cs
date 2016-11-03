@@ -25,11 +25,10 @@ Email: {3}
 Puhelin: {4}
 Koulutus: {5}
 Ammatti: {6}
-Tyyppi: {7}
-Lisätietoja: {8}
-Ip-osoite: {9}
-Luotu (UTC): {10}",
-            m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Type, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yy hh:mm:ss"));
+Lisätietoja: {7}
+Ip-osoite: {8}
+Luotu (UTC): {9}",
+            m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yy hh:mm:ss"));
 
             MailMessage msg = new MailMessage();
 

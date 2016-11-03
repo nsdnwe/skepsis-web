@@ -8,7 +8,7 @@
         <h1>Liity Skepsiksen jäseneksi</h1>
         <p>Yhdistyksen kalenterivuosittainen jäsenmaksu vuodelle 2016 on 30€ ja sisältää Skeptikko-lehden tilauksen. Alle 24-vuotiaille jäsenmaksu on 15€. Mikäli olet alle 24-vuotias, ilmoita myös syntymäaikasi. Yksityisen henkilön kannatusjäsenmaksu on 100€ ja oikeustoimikelpoisen yhteisön 200€. Saat sähköpostitse ohjeet jäsenmaksun suorittamiseksi, kun hallitus on hyväksynyt sinut jäseneksi.</p>
 
-        <p>Voit tilata Skeptikko-lehden myös liittymättä jäseneksi. Tilausmaksu on 30€/vuosi. Lehtitilausta tehdessä tiedoksi riittävät nimi ja osoite. Lehtitilauksen voit myös tehdä ja maksaa <a href="https://holvi.com/shop/skepsis/section/lehtitilaus/">verkkokaupassamme</a>.</p>
+        <p>Voit tilata <b>Skeptikko-lehden</b> myös liittymättä jäseneksi. Tilausmaksu on 30€/vuosi. Tilaa lehti <a href="https://holvi.com/shop/skepsis/section/lehtitilaus/">verkkokaupassamme</a>.</p>
 
         <p>Painamalla sivun alalaidassa sijaitsevaa "Lähetä tiedot"-linkkiä hyväksyt yhdistyksen <a href="/Yhdistys/Yhdistyksensäännöt.aspx">säännöt</a> ja niissä määritellyn <a href="/Sivut/MikaSkepsisOn">yhdistyksen tarkoituksen ja toimintaperiaatteet</a>.</p>
 
@@ -67,7 +67,7 @@
                             @Html.TextBoxFor(model => model.Profession, new { @class = "form-control" })
                         </div>
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label for="inputUserName" class="col-lg-3 control-label">Hakemuksen tyyppi</label>
                         <div class="col-lg-9">
                             @{
@@ -78,7 +78,8 @@
                             }
                             @Html.DropDownListFor(model => model.Type, listItems, new { @class = "form-control", @id = "status" })
                         </div>
-                    </div>
+                    </div>*@
+                    @Html.HiddenFor(model => model.Type)
                     <div class="form-group">
                         <label for="inputUserName" class="col-lg-3 control-label">Lisätietoja</label>
                         <div class="col-lg-9">

@@ -9,8 +9,8 @@ using System.Web.Mvc;
 
 namespace SkepsisWeb.Controllers {
     public class SivutController : Controller {
-        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi";
-        private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi";
+        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // "niko.wessman@nsd.fi";
+        private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // 
 
         private DB db = new DB();
         public ActionResult Etusivu() {
@@ -86,11 +86,12 @@ namespace SkepsisWeb.Controllers {
 
             member.IpAddress = Request.ServerVariables["REMOTE_HOST"].ToString();
             member.Created = DateTime.UtcNow;
+            member.Type = "FULL";
 
             db.Members.Add(member);
             db.SaveChanges();
 
-            if (member.Type == "FULL") member.Type = "Jäsenyys"; else member.Type = "Vain lehti !";
+            //if (member.Type == "FULL") member.Type = "Jäsenyys"; else member.Type = "Vain lehti !";
             EmailHelpers.SendNewMemberEmail(member, NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES, Server);
             var blank = new Member() {
                 CompletedMessage = "Kiitos. Jäsenhakemuksesi on vastaanotettu."
