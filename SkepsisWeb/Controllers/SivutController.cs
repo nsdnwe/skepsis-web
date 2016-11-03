@@ -9,6 +9,9 @@ using System.Web.Mvc;
 
 namespace SkepsisWeb.Controllers {
     public class SivutController : Controller {
+        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "niko.wessman@nsd.fi,info@nsd.fi";
+        private const string FEEDBACK_EMAIL_ADDRESSES = "niko.wessman@nsd.fi,info@nsd.fi";
+
         private DB db = new DB();
         public ActionResult Etusivu() {
             var vm = new IndexViewModel();
@@ -65,7 +68,7 @@ namespace SkepsisWeb.Controllers {
             db.Feedbacks.Add(feedback);
             db.SaveChanges();
 
-            EmailHelpers.SendFeedbackEmail(feedback, "niko.wessman@nsd.fi", Server);
+            EmailHelpers.SendFeedbackEmail(feedback, FEEDBACK_EMAIL_ADDRESSES, Server);
             var blank = new Feedback() {
                 CompletedMessage = "Kiitos. Palautteesi on vastaanotettu."
             };
@@ -88,7 +91,7 @@ namespace SkepsisWeb.Controllers {
             db.SaveChanges();
 
             if (member.Type == "FULL") member.Type = "Jäsenyys"; else member.Type = "Vain lehti !";
-            EmailHelpers.SendNewMemberEmail(member, "niko.wessman@nsd.fi", Server);
+            EmailHelpers.SendNewMemberEmail(member, NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES, Server);
             var blank = new Member() {
                 CompletedMessage = "Kiitos. Jäsenhakemuksesi on vastaanotettu."
             };

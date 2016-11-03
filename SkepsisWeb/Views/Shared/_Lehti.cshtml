@@ -12,8 +12,8 @@
             </tr>
             @if (Model.Magazine.PublicPdf && !string.IsNullOrEmpty(Model.Magazine.MagazinePdfFileUrl)) {
                 <tr>
-                    <td style="border:none; text-align: center" colspan="2">
-                        <a href="@Model.Magazine.MagazinePdfFileUrl" target="_blank">&raquo; PDF lehti</a>
+                    <td style="border:none; padding-top: 10px" colspan="2">
+                        Avaa tästä <a href="@Model.Magazine.MagazinePdfFileUrl" target="_blank">&raquo; PDF lehti</a>
                     </td>
                 </tr>
             }
