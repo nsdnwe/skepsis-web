@@ -10,25 +10,13 @@
     vm.MagazineArticles = Model.MagazineArticles.Where(z => z.MagazineID == vm.Magazine.MagazineID);
     @Html.Partial("_Lehti", vm)
 }
-@*<table>
-        @foreach (var item in Model.MagazineArticles) {
-            if (item.MagazineID == issue.MagazineID) {
-                <tr>
-                    <td style="font-weight: bold; text-align: right; padding-right: 10px; vertical-align: top">
-                        @if(string.IsNullOrEmpty(item.Author)) {
-                            @:-
-                        } else {
-                            @item.Author
-                        }
-                    </td>
-                    <td style="vertical-align: top">
-                        @item.Title
-                        @if (!@issue.PublicPdf && !string.IsNullOrEmpty(item.PdfFile)) {
-                            <a href="@item.PdfFile" target="_blank">&raquo; PDF</a>
-                        }
-                    </td>
-                </tr>
-            }
-        }
-    </table>
-*@
+<div class="row">
+    <div class="col-md-12 text-left data">
+        <p style="padding-top: 20px; font-size: 10px">
+            Kaikkien artikkelien © Copyright Skeptikko-lehti ja artikkelin kirjoittaja.<br />
+            Kirjoitukset ovat vapaasti siteerattavissa ja levitettävissä ei-kaupallisiin tarkoituksiin. Tällöin lähteeksi on mainittava kirjoittajan lisäksi Skeptikko-lehti numeroineen.
+        </p>
+    </div>
+</div>
+
+
