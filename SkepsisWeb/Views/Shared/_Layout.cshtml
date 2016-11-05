@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:description" content="Skepsis ry on suomalaisten skeptikkojen vuonna 1987 perustama tieteellinen yhdistys." />
-    <meta property="og:url" content="http://www.skepsis.fi" />
+    <meta property="og:description" content="Skepsis ry - @ViewBag.Title" />
+    <meta property="og:url" content="http://www.skepsis.fi/Sivut/@ViewBag.OgPageUrl" />
     <meta property="og:image" content="http://www.skepsis.fi/Img/logo.png" />
     <meta property="og:type" content="Website" />
     <meta property="og:site_name" content="Skepsis ry" />
@@ -20,13 +20,26 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.8&appId=266338713768371";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="wrapper">
         <div class="container">
             <header>
                 <div class="top col-md-12">
-                    <a class="navbar-brand" href="index.html"><img src="/img/logo.png"></a>
+                    <div>
+                        <a class="navbar-brand" href="index.html"><img src="/img/logo.png"></a>
+                    </div>
 
                 </div>
+
                 <div class="menu col-md-12 text-center">
                     <div class="navbar  " role="navigation">
 
@@ -43,7 +56,7 @@
                                 <li><a href="/">Etusivu</a></li>
                                 <li class="menu-separator"></li>
                                 <li>
-                                    <a href="/Sivut/MikaSkepsisOn" class="dropdown-toggle" data-toggle="dropdown">Yhdistys</a>
+                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Yhdistys</a>
                                     <ul class="dropdown-menu multi-level">
                                         <li><a href="/Sivut/MikaSkepsisOn">Mikä Skepsis on?</a></li>
                                         <li class="sub-menu"><a href="/Sivut/SkepsisPaSvenska">Skepsis på Svenska</a></li>
@@ -62,7 +75,7 @@
                                 </li>
                                 <li class="menu-separator"></li>
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toiminta</a>
+                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Toiminta</a>
                                     <ul class="dropdown-menu multi-level">
                                         <li><a href="/Sivut/Uutiset">Uutiset</a></li>
                                         <li class="divider"></li>
@@ -81,7 +94,7 @@
                                 </li>
                                 <li class="menu-separator"></li>
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Julkaisuja</a>
+                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Julkaisuja</a>
                                     <ul class="dropdown-menu multi-level">
                                         <li><a href="/Sivut/SkeptikkoLehdet">Skeptikko-lehdet</a></li>
                                         <li class="divider"></li>
@@ -105,11 +118,16 @@
 
             </header>
 
+
             @RenderBody()
+
             <footer>
-                <div class="foot-text">
+                <div class="foot-text" style="float:left">
                     <p>Copyright 2016 Skepsis ry • Sivuston ylläpidosta vastaa <a href="http://www.nsd.fi">NSD Oy</a> </p>
                 </div>
+                @if (!string.IsNullOrEmpty(@ViewBag.OgPageUrl)) {
+                    <div style="float: right; margin: 4px 15px;" class="fb-like" data-href="http://www.skepsis.fi/Sivut/@ViewBag.OgPageUrl" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                }
             </footer>
         </div>
     </div>

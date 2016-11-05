@@ -14,6 +14,8 @@ namespace SkepsisWeb.Controllers {
 
         private DB db = new DB();
         public ActionResult Etusivu() {
+            ViewBag.OgPageUrl = "Etusivu";
+
             var vm = new IndexViewModel();
             vm.Articles = db.Articles.Where(z => !z.Deleted && z.PublishDatetime <= DateTime.UtcNow).OrderByDescending(z => z.PublishDatetime).Take(3).ToList();
             vm.PublicEvents = db.PublicEvents.Where(z => !z.Deleted && z.EventDatetime >= DateTime.UtcNow).OrderBy(z => z.EventDatetime).Take(3).ToList();
@@ -32,18 +34,23 @@ namespace SkepsisWeb.Controllers {
         // Yhdistys
         // --------------------------------------------------------------------------------------
         public ActionResult MikaSkepsisOn() {
+            ViewBag.OgPageUrl = "MikaSkepsisOn";
             return View();
         }
         public ActionResult SkepsisPaSvenska() {
+            ViewBag.OgPageUrl = "SkepsisPaSvenska";
             return View();
         }
         public ActionResult SkepsisInEnglish() {
+            ViewBag.OgPageUrl = "SkepsisInEnglish";
             return View();
         }
         public ActionResult Henkilohistoria() {
+            ViewBag.OgPageUrl = "Henkilohistoria";
             return View();
         }
         public ActionResult YhdistyksenSaannot() {
+            ViewBag.OgPageUrl = "YhdistyksenSaannot";
             return View();
         }
         public ActionResult Yhteystiedot() {
@@ -138,6 +145,7 @@ namespace SkepsisWeb.Controllers {
         }
 
         public ActionResult SkepsiksenHaasteJaStipendi() {
+            ViewBag.OgPageUrl = "SkepsiksenHaasteJaStipendi";
             return View();
         }
         public ActionResult NilsMustelinRahasto() {
@@ -151,6 +159,7 @@ namespace SkepsisWeb.Controllers {
 
         // Lista vuosista ja yleistä tietoa Skeptikko-lehdestä
         public ActionResult SkeptikkoLehdet() {
+            ViewBag.OgPageUrl = "SkeptikkoLehdet";
             return View();
         }
 
@@ -164,12 +173,15 @@ namespace SkepsisWeb.Controllers {
             return View(res);
         }
         public ActionResult Artikkelit() {
+            ViewBag.OgPageUrl = "Artikkelit";
             return View();
         }
         public ActionResult Linkkeja() {
+            ViewBag.OgPageUrl = "Linkkeja";
             return View();
         }
         public ActionResult AudioJaVideoTallenteet() {
+            ViewBag.OgPageUrl = "AudioJaVideoTallenteet";
             return View();
         }
         // --------------------------------------------------------------------------------------
