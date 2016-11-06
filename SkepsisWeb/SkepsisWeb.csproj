@@ -648,6 +648,7 @@
     <Content Include="Img\logo.png" />
     <Content Include="Img\menuseparator.png" />
     <Content Include="Img\postbullets.png" />
+    <Content Include="Img\skepsis-logo-iso1.png" />
     <Content Include="Img\spacer.gif" />
     <Content Include="Img\subitem.png" />
     <Content Include="Julkaisuja\Artikkelit.aspx" />
