@@ -1480,6 +1480,7 @@
     <Content Include="Mustelin\why.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="skepsis-logo-iso.png" />
     <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaJaSokratesPalkinnotEI.aspx" />
     <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2011.aspx" />
     <Content Include="Toiminta\HuuhaaJaSokratesPalkinnot\HuuhaaPalkinto2012.aspx" />
