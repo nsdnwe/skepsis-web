@@ -54,16 +54,20 @@ namespace SkepsisWeb.Controllers {
             return View();
         }
         public ActionResult Yhteystiedot() {
+            ViewBag.OgPageUrl = "Yhteystiedot";
             return View("Yhteystiedot2");
         }
         public ActionResult Yhteystiedot2() {
+            ViewBag.OgPageUrl = "Yhteystiedot";
             return View();
         }
         public ActionResult AnnaPalautetta() {
+            ViewBag.OgPageUrl = "AnnaPalautetta";
             return View(new Feedback());
         }
         [HttpPost]
         public ActionResult AnnaPalautetta(Feedback feedback) {
+            ViewBag.OgPageUrl = "AnnaPalautetta";
             if (!ModelState.IsValid) {
                 ModelState.AddModelError("", "Palauteteksti on pakollinen tieto.");
                 return View(feedback);
@@ -82,10 +86,12 @@ namespace SkepsisWeb.Controllers {
             return View(blank);
         }
         public ActionResult LiitySkepsiksenJaseneksi() {
+            ViewBag.OgPageUrl = "LiitySkepsiksenJaseneksi";
             return View(new Member());
         }
         [HttpPost]
         public ActionResult LiitySkepsiksenJaseneksi(Member member) {
+            ViewBag.OgPageUrl = "LiitySkepsiksenJaseneksi";
             if (!ModelState.IsValid) {
                 ModelState.AddModelError("", "Nimi, katuosoite, postinumero ja postitoimipaikka ovat pakollisia tietoja.");
                 return View(member);
@@ -110,15 +116,18 @@ namespace SkepsisWeb.Controllers {
         // Toiminta
         // --------------------------------------------------------------------------------------
         public ActionResult Uutiset() {
+            ViewBag.OgPageUrl = "Uutiset";
             var articles = db.Articles.Where(z => !z.Deleted && z.PublishDatetime <= DateTime.UtcNow).OrderByDescending(z => z.PublishDatetime).Take(30).ToList();
             return View(articles);
         }
         public ActionResult Tapahtumat() {
+            ViewBag.OgPageUrl = "Tapahtumat";
             var limit = DateTime.UtcNow.AddYears(-1);
             var publicEvents = db.PublicEvents.Where(z => !z.Deleted && z.EventDatetime >= limit).OrderBy(z => z.EventDatetime).Take(30).ToList();
             return View(publicEvents);
         }
         public ActionResult HuuhaaJaSokratesPalkinnot() {
+            ViewBag.OgPageUrl = "HuuhaaJaSokratesPalkinnot";
             // Only the last ones made public
             var res = new LastPrizesViewModel();
             res.HuuhaaPrize = db.Prizes.Where(z => z.HuuhaaPrizeEnabled).OrderByDescending(z => z.PrizeID).First();
@@ -127,19 +136,23 @@ namespace SkepsisWeb.Controllers {
         }
         // id = vuosi
         public ActionResult HuuhaaPalkinto(string id = "") {
+            ViewBag.OgPageUrl = "HuuhaaPalkinto/" + id;
             var res = db.Prizes.Single(z => z.PrizeID == id && z.HuuhaaPrizeEnabled);
             return View(res);
         }
         // id = vuosi
         public ActionResult SokratesPalkinto(string id = "") {
+            ViewBag.OgPageUrl = "SokratesPalkinto/" + id;
             var res = db.Prizes.Single(z => z.PrizeID == id && z.SokratesPrizeEnabled);
             return View(res);
         }
         public ActionResult HuuhaaPalkinnot() {
+            ViewBag.OgPageUrl = "HuuhaaPalkinnot";
             var res = db.Prizes.Where(z => z.HuuhaaPrizeEnabled && z.HuuhaaPrizeText != null).OrderByDescending(z => z.PrizeID).ToList();
             return View(res);
         }
         public ActionResult SokratesPalkinnot() {
+            ViewBag.OgPageUrl = "SokratesPalkinnot";
             var res = db.Prizes.Where(z => z.SokratesPrizeEnabled && z.SokratesPrizeText != null).OrderByDescending(z => z.PrizeID).ToList();
             return View(res);
         }
@@ -149,6 +162,7 @@ namespace SkepsisWeb.Controllers {
             return View();
         }
         public ActionResult NilsMustelinRahasto() {
+            ViewBag.OgPageUrl = "NilsMustelinRahasto";
             return View();
         }
 
@@ -166,6 +180,7 @@ namespace SkepsisWeb.Controllers {
         // Yhden vuoden lehdet
         // id = vuosi
         public ActionResult SkeptikkoLehti(int id = 0) {
+            ViewBag.OgPageUrl = "SkeptikkoLehti/" + id.ToString();
             var res = new MagazinesViewModel();
             res.Year = id;
             res.Magazines = db.Magazines.Where(z => z.MagazineID.StartsWith(id.ToString()) && z.Enabled).ToList();
@@ -188,9 +203,11 @@ namespace SkepsisWeb.Controllers {
         // Muut
         // --------------------------------------------------------------------------------------
         public ActionResult Haku() {
+            ViewBag.OgPageUrl = "Haku";
             return View();
         }
         public ActionResult KeskustelusivustonSaannot() {
+            ViewBag.OgPageUrl = "KeskustelusivustonSaannot";
             return View();
         }
 
