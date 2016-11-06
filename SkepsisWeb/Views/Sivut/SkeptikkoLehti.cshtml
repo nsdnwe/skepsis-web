@@ -2,7 +2,7 @@
 @using SkepsisWeb.Helpers
 
 @{
-    ViewBag.Title = "Skeptikko-lehdet @Model.Year";
+    ViewBag.Title = "Skeptikko-lehdet" + Model.Year;
 }
 @foreach (SkepsisWeb.Models.Magazine issue in Model.Magazines) {
     SkepsisWeb.ViewModels.MagazineViewModel vm = new SkepsisWeb.ViewModels.MagazineViewModel();
