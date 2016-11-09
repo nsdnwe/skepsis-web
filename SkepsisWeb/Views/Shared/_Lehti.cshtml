@@ -25,9 +25,8 @@
                     <ul>
                         @foreach (var item in Model.MagazineArticles) {
                             <li>
-                                <span style="font-weight: bold">@item.Author</span>
                                 @if (!string.IsNullOrEmpty(item.Author)) {
-                                    <span>:</span>
+                                    <span style="font-weight: bold">@item.Author :</span>
                                 }
                                 @if (!@Model.Magazine.PublicPdf && !string.IsNullOrEmpty(item.PdfFile)) {
                                     <span><a href="@item.PdfFile" target="_blank">@item.Title</a></span>
