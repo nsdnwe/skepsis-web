@@ -210,6 +210,15 @@ namespace SkepsisWeb.Controllers {
             ViewBag.OgPageUrl = "KeskustelusivustonSaannot";
             return View();
         }
+        // --------------------------------------------------------------------------------------
+        // Legacy
+        // --------------------------------------------------------------------------------------
+        public ActionResult Yhteys() {
+            return RedirectToAction("Yhteystiedot");
+        }
+        public ActionResult Saannot() {
+            return RedirectToAction("YhdistyksenSaannot");
+        }
 
         public ActionResult Testing() {
             //EmailHelpers.SendNewMemberEmail("Niko", "Niko.wessman@nsd.fi", Server);

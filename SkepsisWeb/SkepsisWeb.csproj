@@ -1231,6 +1231,7 @@
     <Content Include="Lehti\2016\2016-1.png" />
     <Content Include="Lehti\2016\2016-2.png" />
     <Content Include="Lehti\2016\2016-3.png" />
+    <Content Include="Lehti\index.html" />
     <Content Include="main.css" />
     <Content Include="menu.css" />
     <Content Include="Mustelin\bar-suom.html" />
