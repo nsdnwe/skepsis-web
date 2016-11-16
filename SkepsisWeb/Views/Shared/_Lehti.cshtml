@@ -3,6 +3,48 @@
 
 
 <div class="row" style="margin-bottom:30px">
+    <div class="col-md-6 text-left ">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Skeptikko @Model.Magazine.MagazineID</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @if (Model.Magazine.PublicPdf && !string.IsNullOrEmpty(Model.Magazine.MagazinePdfFileUrl)) {
+                    @:Avaa tästä <a href="@Model.Magazine.MagazinePdfFileUrl" target="_blank">&raquo; PDF lehti</a>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="@Model.Magazine.MagazineCoverImageUrl" style="max-width: 300px; " />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 text-left ">
+        <div class="row"><div class="col-md-12"></div><h1>&nbsp;</h1></div>
+        <div class="row"><div class="col-md-12"></div>&nbsp;</div>
+            <ul>
+                @foreach (var item in Model.MagazineArticles) {
+                    <li>
+                        @if (!string.IsNullOrEmpty(item.Author)) {
+                            <span style="font-weight: bold">@item.Author :</span>
+                        }
+                        @if (!@Model.Magazine.PublicPdf && !string.IsNullOrEmpty(item.PdfFile)) {
+                            <span><a href="@item.PdfFile" target="_blank">@item.Title</a></span>
+                        } else {
+                            <span style="">@item.Title</span>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+
+</div>
+
+
+ @*<div class="row" style="margin-bottom:30px">
     <div class="col-md-12 text-left data">
         <table border="0" style="width: 100%">
             <tr>
@@ -40,7 +82,4 @@
             </tr>
         </table>
     </div>
-</div>
-
-
- 
+</div>*@

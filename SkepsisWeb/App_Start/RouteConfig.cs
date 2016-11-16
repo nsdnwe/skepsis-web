@@ -15,7 +15,7 @@ namespace SkepsisWeb
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{action}/{id}",
                 defaults: new { controller = "Sivut", action = "Etusivu", id = UrlParameter.Optional }
             );
         }

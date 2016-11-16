@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="0; url=/Sivut/HuuhaaPalkinto/2012" />
+        <meta http-equiv="refresh" content="0; url=/HuuhaaPalkinto/2012" />
         <title></title>
     </head>
     <body>

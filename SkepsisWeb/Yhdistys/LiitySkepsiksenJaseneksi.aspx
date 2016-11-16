@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="0; url=/Sivut/LiitySkepsiksenJaseneksi" />
+        <meta http-equiv="refresh" content="0; url=/LiitySkepsiksenJaseneksi" />
         <title></title>
     </head>
     <body>

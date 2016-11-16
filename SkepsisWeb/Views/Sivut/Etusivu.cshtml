@@ -11,7 +11,7 @@
         <h1>Mikä on Skepsis?</h1>
         <p><strong>Skepsis ry</strong> on suomalaisten skeptikkojen vuonna 1987 perustama tieteellinen yhdistys.</p>
         <p>
-            <a href="/Sivut/YhdistyksenSaannot">Skepsiksen sääntöjen</a> mukaan yhdistyksen tarkoitus on
+            <a href="/YhdistyksenSaannot">Skepsiksen sääntöjen</a> mukaan yhdistyksen tarkoitus on
         </p>
         <ul>
             <li>Edistää kriittistä ajattelua, <a href="~/Ihmeellinen/tiede.html">tieteellisen</a> tiedon hankintamenetelmien opetusta sekä tieteeseen ja järkeen perustuvaa käsitystä maailmasta.</li>
@@ -26,7 +26,7 @@
     <div class="col-md-6 second text-left">
         <h1>Uutisia</h1>
         @foreach (var item in Model.Articles) {
-            <a href="/Sivut/Uutiset"><h4>@item.ArticleDatetime.ToString("dd.MM.yyyy") @item.Title</h4></a>
+            <a href="/Uutiset"><h4>@item.ArticleDatetime.ToString("dd.MM.yyyy") @item.Title</h4></a>
             <p>@Html.FormatBody(item.Ingress)</p>
             <div style="margin-bottom:20px"></div>
         }
@@ -39,16 +39,16 @@
 
         <h4>Huuhaa-palkinto @Model.HuuhaaPrize.PrizeID</h4>
         <p>@Model.HuuhaaPrize.HuuhaaPrizeLead <b>@Model.HuuhaaPrize.HuuhaaPrizeTitle</b> @Model.HuuhaaPrize.HuuhaaPrizeSubTitle</p>
-        <p>Lue palkinnon perustelut <a href="/Sivut/HuuhaaPalkinto/@Model.HuuhaaPrize.PrizeID">täältä.</a></p>
+        <p>Lue palkinnon perustelut <a href="/HuuhaaPalkinto/@Model.HuuhaaPrize.PrizeID">täältä.</a></p>
 
         <h4>Sokrates-palkinto @Model.SokratesPrize.PrizeID</h4>
         <p>@Model.SokratesPrize.SokratesPrizeLead <b>@Model.SokratesPrize.SokratesPrizeTitle</b> @Model.SokratesPrize.SokratesPrizeSubTitle</p>
-        <p>Lue palkinnon perustelut <a href="/Sivut/SokratesPalkinto/@Model.SokratesPrize.PrizeID">täältä.</a></p>
+        <p>Lue palkinnon perustelut <a href="/SokratesPalkinto/@Model.SokratesPrize.PrizeID">täältä.</a></p>
     </div>
     <div class="col-md-6 second text-left">
         <h1>Seuraavat tapahtumat</h1>
         @foreach (var item in Model.PublicEvents) {
-            <a href="/Sivut/Tapahtumat">
+            <a href="/Tapahtumat">
                 <h4>
                     @item.EventDatetime.ToString("dd.MM.yyyy") @item.Title
                     <i>@item.City</i>
@@ -69,6 +69,6 @@
 
 <div class="row" style="margin-top:40px">
     <div class="col-md-4" style="text-align:left"><a href="http://www.facebook.com/home.php?#!/groups/skepsisry/"><img alt="" src="/img/facebook.jpg" style="width: 100px;"></a></div>
-    <div class="col-md-4 center-block"><a href="/Sivut/LiitySkepsiksenJaseneksi"><img class="footimg2" alt="" src="/img/liity.png"></a></div>
-    <div class="col-md-4" style="text-align:right"><a href="/Sivut/SkepsisInEnglish">In English</a>&nbsp;•&nbsp;<a href="/Sivut/SkepsisPaSvenska">På Svenska</a></div>
+    <div class="col-md-4 center-block"><a href="/LiitySkepsiksenJaseneksi"><img class="footimg2" alt="" src="/img/liity.png"></a></div>
+    <div class="col-md-4" style="text-align:right"><a href="/SkepsisInEnglish">In English</a>&nbsp;•&nbsp;<a href="/SkepsisPaSvenska">På Svenska</a></div>
 </div>
