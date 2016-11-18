@@ -124,7 +124,7 @@ header .top{height: 100px;
     background-repeat-y: no-repeat;
     background-size: cover;}
 header .menu{
-    height:30px;
+    /*height:30px;*/
     background:#F6F0BF;
     border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
@@ -189,7 +189,8 @@ line-height: 1.428571429;
     }
 	#main-menu{display:block !important;}
    .navbar {
- border-radius: 0px; 
+     border-radius: 0px;
+     min-height:30px; 
    }
 .menu-separator {
     display: block;
