@@ -10,7 +10,7 @@
         @foreach (SkepsisWeb.Models.PublicEvent item in Model) {
             <div>
                 <h2>@item.EventDatetime.ToString("dd.MM.yyyy") @item.Title <br/><i>@item.City</i></h2> 
-                <p>@Html.FormatBody(item.Ingress)</p>
+                <p>@Html.FormatBody(item.Body)</p>
                 <div style="margin-bottom:10px"></div>
             </div>
         }
