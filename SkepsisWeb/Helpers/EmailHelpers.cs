@@ -28,7 +28,7 @@ Ammatti: {6}
 Lisätietoja: {7}
 Ip-osoite: {8}
 Luotu (UTC): {9}",
-            m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yy hh:mm:ss"));
+            m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
             MailMessage msg = new MailMessage();
 
@@ -50,7 +50,7 @@ Puhelin: {2}
 Palaute: {3}
 Ip-osoite: {4}
 Luotu (UTC): {5}",
-            f.Name, f.Email, f.Phone, f.Info, f.IpAddress, f.Created.ToString("dd.MM.yy hh:mm:ss"));
+            f.Name, f.Email, f.Phone, f.Info, f.IpAddress, f.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
             MailMessage msg = new MailMessage();
 
