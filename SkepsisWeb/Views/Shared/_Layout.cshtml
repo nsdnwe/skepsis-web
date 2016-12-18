@@ -136,7 +136,8 @@
                     <p>Copyright 2016 Skepsis ry • Sivuston ylläpidosta vastaa <a href="http://www.nsd.fi">NSD Oy</a> </p>
                 </div>
                 @if (!string.IsNullOrEmpty(@ViewBag.OgPageUrl)) {
-                    <div style="float: right; margin: 4px 15px;" class="fb-like" data-href="http://www.skepsis.fi/@ViewBag.OgPageUrl" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                    <div style="float: right; margin: 4px 15px 0px 0px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.skepsis.fi/@ViewBag.OgPageUrl" >Tweet</a></div>
+                    <div style="float: right; margin: 4px 3px;" class="fb-like" data-href="http://www.skepsis.fi/@ViewBag.OgPageUrl" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
                 }
             </footer>
         </div>
@@ -154,5 +155,7 @@
       ga('create', 'UA-27605309-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
    </body>
 </html>
