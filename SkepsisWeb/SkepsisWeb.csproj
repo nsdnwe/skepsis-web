@@ -1787,6 +1787,7 @@
     <Content Include="Lehti\2016\vastine-pekka-louhiala.pdf" />
     <Content Include="Mustelin\index.html.orig" />
     <Content Include="Mustelin\lake.class" />
+    <Content Include="Jutut\Skepsis050417JT.pdf" />
     <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
