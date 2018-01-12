@@ -37,9 +37,9 @@
                             <span style="font-weight: bold">@item.Author :</span>
                         }
                         @if (!@Model.Magazine.PublicPdf && !string.IsNullOrEmpty(item.PdfFile)) {
-                            <span><a href="@item.PdfFile" target="_blank">@item.Title</a></span>
+                            <span><a href="@item.PdfFile" target="_blank">@Html.FormatBody(item.Title)</a></span>
                         } else {
-                            <span style="">@item.Title</span>
+                            <span style="">@Html.FormatBody(item.Title)</span>
                         }
                     </li>
                 }
