@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace SkepsisWeb.Controllers {
     public class SivutController : Controller {
-        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // "niko.wessman@nsd.fi";
+        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // "secretary@skepsis.fi,niko.wessman@nsd.fi";
         private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // 
 
         private DB db = new DB();

@@ -27,7 +27,7 @@ Koulutus: {5}
 Ammatti: {6}
 Lisätietoja: {7}
 Ip-osoite: {8}
-Luotu (UTC): {9}",
+Luotu (UTC): {9} ",
             m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
             MailMessage msg = new MailMessage();
