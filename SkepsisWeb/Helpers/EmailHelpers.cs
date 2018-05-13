@@ -62,7 +62,7 @@ Luotu (UTC): {5}",
         }
 
         // If emailTo = "", receivers have been defined already
-        private static void processAndSendEmail(SendGridMessage message, HttpServerUtilityBase server, string emailTo = "") {
+        private static void processAndSendEmail(SendGridMessage message, HttpServerUtilityBase server, string emailTo) {
             //addEmailFooter(message);
             sendEmail(message, server, emailTo);
         }
@@ -77,9 +77,12 @@ Luotu (UTC): {5}",
 
         //    smtpClient.Send(msg);
         //}
-        private static void sendEmail(SendGridMessage message, HttpServerUtilityBase server,  string emailTo = "") {
+        private static void sendEmail(SendGridMessage message, HttpServerUtilityBase server,  string emailTo) {
             message.From = new MailAddress("web-sivut@skepsis.fi", "web-sivut@skepsis.fi");
-            if (emailTo != "") message.AddTo(emailTo);
+            string[] emailTos = emailTo.Split(',');
+            foreach (var item in emailTos) {
+                message.AddTo(item);
+            }
 
             message.Html += getEmailPassword(server);
             var credentials = new NetworkCredential("azure_3b493c49ee514bb1d7e377ce388c2410@azure.com", getEmailPassword(server)); 
