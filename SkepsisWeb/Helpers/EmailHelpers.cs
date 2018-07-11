@@ -18,17 +18,17 @@ namespace SkepsisWeb.Helpers {
         public static void SendNewMemberEmail(Member m, string toEmail, HttpServerUtilityBase server) {
 
             string template = string.Format(@"
-JÄSENHAKEMUS
-
-Nimi: {0}
-Osoite: {1}
-Osoite: {2}
-Email: {3}
-Puhelin: {4}
-Koulutus: {5}
-Ammatti: {6}
-Lisätietoja: {7}
-Ip-osoite: {8}
+JÄSENHAKEMUS<br/>
+<br/>
+Nimi: {0}<br/>
+Osoite: {1}<br/>
+Osoite: {2}<br/>
+Email: {3}<br/>
+Puhelin: {4}<br/>
+Koulutus: {5}<br/>
+Ammatti: {6}<br/>
+Lisätietoja: {7}<br/>
+Ip-osoite: {8}<br/>
 Luotu (UTC): {9} ",
             m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
@@ -43,13 +43,13 @@ Luotu (UTC): {9} ",
         public static void SendFeedbackEmail(Feedback f, string toEmail, HttpServerUtilityBase server) {
 
             string template = string.Format(@"
-PALAUTE
-
-Nimi: {0}
-Email: {1}
-Puhelin: {2}
-Palaute: {3}
-Ip-osoite: {4}
+PALAUTE<br/>
+<br/>
+Nimi: {0}<br/>
+Email: {1}<br/>
+Puhelin: {2}<br/>
+Palaute: {3}<br/>
+Ip-osoite: {4}<br/>
 Luotu (UTC): {5}",
             f.Name, f.Email, f.Phone, f.Info, f.IpAddress, f.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
@@ -84,7 +84,6 @@ Luotu (UTC): {5}",
                 message.AddTo(item);
             }
 
-            message.Html += getEmailPassword(server);
             var credentials = new NetworkCredential("azure_3b493c49ee514bb1d7e377ce388c2410@azure.com", getEmailPassword(server)); 
             var transportWeb = new Web(credentials);
             transportWeb.DeliverAsync(message);
