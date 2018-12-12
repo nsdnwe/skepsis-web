@@ -2135,6 +2135,7 @@
     <Content Include="Views\Shared\_SokratesPrize.cshtml" />
     <Content Include="Views\Sivut\Yhteystiedot2.cshtml" />
     <Content Include="Views\Sivut\Yhteystiedot.cshtml" />
+    <Content Include="Views\Sivut\IlpoVSalmiMuistokirjoitus.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -211,7 +211,10 @@ namespace SkepsisWeb.Controllers {
             ViewBag.OgPageUrl = "KeskustelusivustonSaannot";
             return View();
         }
-        // --------------------------------------------------------------------------------------
+        public ActionResult IlpoVSalmiMuistokirjoitus() {
+            ViewBag.OgPageUrl = "IlpoVSalmiMuistokirjoitus";
+            return View();
+        }        // --------------------------------------------------------------------------------------
         // Legacy
         // --------------------------------------------------------------------------------------
         public ActionResult Yhteys() {
