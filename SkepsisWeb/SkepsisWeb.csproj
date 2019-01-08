@@ -673,6 +673,7 @@
     <Content Include="Jutut\ilmastonmuutos.html" />
     <Content Include="Jutut\index.html" />
     <Content Include="Jutut\itameri_nyt.html" />
+    <Content Include="Jutut\karinen.htm" />
     <Content Include="Jutut\keskustelu.html" />
     <Content Include="Jutut\kynttila-korvassa.html" />
     <Content Include="Jutut\kysy_ja_kyseenalaista.html" />
@@ -763,6 +764,7 @@
     <Content Include="Jutut\pakki.htm" />
     <Content Include="Jutut\pakki.html" />
     <Content Include="Jutut\skeptismi.html" />
+    <Content Include="Jutut\slogan.htm" />
     <Content Include="Jutut\teeta_ja_homeopatiaa.html" />
     <Content Include="Jutut\tiede-pseudotiede.html" />
     <Content Include="Jutut\toimiiko.htm" />
@@ -1793,6 +1795,8 @@
     <Content Include="Mustelin\lake.class" />
     <Content Include="Jutut\Skepsis050417JT.pdf" />
     <Content Include="Jutut\ursa_vsot_mainos_A4.pdf" />
+    <None Include="Properties\PublishProfiles\SkepsisWeb - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
