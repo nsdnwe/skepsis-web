@@ -1795,9 +1795,6 @@
     <Content Include="Mustelin\lake.class" />
     <Content Include="Jutut\Skepsis050417JT.pdf" />
     <Content Include="Jutut\ursa_vsot_mainos_A4.pdf" />
-    <None Include="Properties\PublishProfiles\SkepsisWeb - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\SkepsisWeb - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -2149,6 +2146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
