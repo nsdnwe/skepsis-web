@@ -61,7 +61,7 @@ Luotu (UTC): {5}",
         //private static void processAndSendEmail(SendGridMessage message, HttpServerUtilityBase server, string emailTo) {
         //    //addEmailFooter(message);
         //    sendEmail(message, server, emailTo);
-        //}
+        //} 
 
         // emailTo in format "niko.wessman@nsd.fi,secretary@skepsis.fi"
         private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
