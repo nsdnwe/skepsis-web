@@ -63,13 +63,16 @@ Luotu (UTC): {5}",
         //    sendEmail(message, server, emailTo);
         //}
 
+        // emailTo in format "niko.wessman@nsd.fi,secretary@skepsis.fi"
         private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
             string apiKey = getEmailPassword(server);
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("skepsis.noreply@skepsis.fi", "Skepsis - Keskustelu");
             List<EmailAddress> to = new List<EmailAddress>();
-            to.Add(new EmailAddress(emailTo));
-            to.Add(new EmailAddress("niko.wessman@nsd.fi"));
+            string[] emailTos = emailTo.Trim().Replace("; ", ";").Replace(';', ',').Split(',');
+            foreach (var item in emailTos) {
+                to.Add(new EmailAddress(item));
+            }
             var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, "", html);
             client.SendEmailAsync(msg);
         }
