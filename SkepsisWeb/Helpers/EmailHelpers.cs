@@ -6,12 +6,14 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using SendGrid;
+using SendGrid.Helpers.Mail;
 
 
 // NuGet: SendGrid
 // Spam testing
 // Parempi: http://www.mail-tester.com
 // http://www.isnotspam.com 
+// https://sendgrid.com/docs/for-developers/sending-email/v3-csharp-code-example/
 
 namespace SkepsisWeb.Helpers {
     public static class EmailHelpers {
@@ -32,12 +34,9 @@ Ip-osoite: {8}<br/>
 Luotu (UTC): {9} ",
             m.Name, m.Address, m.ZipAndCity, m.Email, m.Phone, m.Education, m.Profession, m.Info, m.IpAddress, m.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
-            SendGridMessage message = new SendGridMessage();
+            string subject = "Skepsis jäsenhakemus - " + m.Name;
 
-            message.Subject = "Skepsis jäsenhakemus - " + m.Name;
-            message.Html = template;
-
-            processAndSendEmail(message, server, toEmail);
+            processAndSendEmail(toEmail, subject, template, server);
         }
 
         public static void SendFeedbackEmail(Feedback f, string toEmail, HttpServerUtilityBase server) {
@@ -53,18 +52,26 @@ Ip-osoite: {4}<br/>
 Luotu (UTC): {5}",
             f.Name, f.Email, f.Phone, f.Info, f.IpAddress, f.Created.ToString("dd.MM.yyyy HH:mm:ss"));
 
-            SendGridMessage message = new SendGridMessage();
+            string subject = "Skepsis palaute - " + f.Name;
 
-            message.Subject = "Skepsis palaute - " + f.Name;
-            message.Html = template;
-
-            processAndSendEmail(message, server, toEmail);
+            processAndSendEmail(toEmail, subject, template, server);
         }
 
         // If emailTo = "", receivers have been defined already
-        private static void processAndSendEmail(SendGridMessage message, HttpServerUtilityBase server, string emailTo) {
-            //addEmailFooter(message);
-            sendEmail(message, server, emailTo);
+        //private static void processAndSendEmail(SendGridMessage message, HttpServerUtilityBase server, string emailTo) {
+        //    //addEmailFooter(message);
+        //    sendEmail(message, server, emailTo);
+        //}
+
+        private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
+            string apiKey = getEmailPassword(server);
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("skepsis.noreply@skepsis.fi", "Skepsis - Keskustelu");
+            List<EmailAddress> to = new List<EmailAddress>();
+            to.Add(new EmailAddress(emailTo));
+            to.Add(new EmailAddress("niko.wessman@nsd.fi"));
+            var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, "", html);
+            client.SendEmailAsync(msg);
         }
 
 
@@ -77,17 +84,17 @@ Luotu (UTC): {5}",
 
         //    smtpClient.Send(msg);
         //}
-        private static void sendEmail(SendGridMessage message, HttpServerUtilityBase server,  string emailTo) {
-            message.From = new MailAddress("web-sivut@skepsis.fi", "web-sivut@skepsis.fi");
-            string[] emailTos = emailTo.Split(',');
-            foreach (var item in emailTos) {
-                message.AddTo(item);
-            }
+        //private static void sendEmail(SendGridMessage message, HttpServerUtilityBase server,  string emailTo) {
+        //    message.From = new MailAddress("web-sivut@skepsis.fi", "web-sivut@skepsis.fi");
+        //    string[] emailTos = emailTo.Split(',');
+        //    foreach (var item in emailTos) {
+        //        message.AddTo(item);
+        //    }
 
-            var credentials = new NetworkCredential("azure_3b493c49ee514bb1d7e377ce388c2410@azure.com", getEmailPassword(server)); 
-            var transportWeb = new Web(credentials);
-            transportWeb.DeliverAsync(message);
-        }
+        //    var credentials = new NetworkCredential("azure_3b493c49ee514bb1d7e377ce388c2410@azure.com", getEmailPassword(server)); 
+        //    var transportWeb = new Web(credentials);
+        //    transportWeb.DeliverAsync(message);
+        //}
 
         public static string getEmailPassword(HttpServerUtilityBase server) {
             // Try is local
