@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Web;
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using Newtonsoft.Json;
 
 
 // NuGet: SendGrid
@@ -108,5 +109,31 @@ Luotu (UTC): {5}",
                 return Environment.GetEnvironmentVariable("EMAIL_PASSWORD").ToString();
             }
         }
+        // Not the best place. Refactor someday
+        public static string getRecaptchaPrivateKey(HttpServerUtilityBase server) {
+            // Try is local
+            try {
+                return System.IO.File.ReadAllText(server.MapPath(@"~/RecaptchaPrivate.key"));
+            } catch {
+                // I guess we are in Azure
+                return Environment.GetEnvironmentVariable("recaptchaPrivateKey").ToString();
+            }
+        }
+        public static CaptchaResponse ValidateCaptcha(string response, HttpServerUtilityBase server) {
+            string secret = getRecaptchaPrivateKey(server);
+            var client = new WebClient();
+            var jsonResult = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
+            return JsonConvert.DeserializeObject<CaptchaResponse>(jsonResult.ToString());
+        }
+
+
     }
+    public class CaptchaResponse {
+        [JsonProperty("success")]
+        public bool Success { get; set; }
+
+        [JsonProperty("error-codes")]
+        public List<string> ErrorMessage { get; set; }
+    }
+
 }

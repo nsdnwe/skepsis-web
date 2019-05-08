@@ -9,8 +9,8 @@ using System.Web.Mvc;
 
 namespace SkepsisWeb.Controllers {
     public class SivutController : Controller {
-        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // "secretary@skepsis.fi,niko.wessman@nsd.fi";
-        private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // 
+        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "niko.wessman@nsd.fi"; // "secretary@skepsis.fi,niko.wessman@nsd.fi";
+        private const string FEEDBACK_EMAIL_ADDRESSES = "niko.wessman@nsd.fi"; // 
 
         private DB db = new DB();
         public ActionResult Etusivu() {
@@ -68,6 +68,9 @@ namespace SkepsisWeb.Controllers {
         }
         [HttpPost, ValidateAntiForgeryToken()]
         public ActionResult AnnaPalautetta(Feedback feedback) {
+            CaptchaResponse capResponse = EmailHelpers.ValidateCaptcha(Request["g-recaptcha-response"], Server);
+            if (!capResponse.Success) return Content("Error From Google ReCaptcha : " + capResponse.ErrorMessage[0].ToString());
+
             ViewBag.OgPageUrl = "AnnaPalautetta";
             if (!ModelState.IsValid) {
                 ModelState.AddModelError("", "Palauteteksti on pakollinen tieto.");
@@ -92,6 +95,9 @@ namespace SkepsisWeb.Controllers {
         }
         [HttpPost, ValidateAntiForgeryToken()]
         public ActionResult LiitySkepsiksenJaseneksi(Member member) {
+            CaptchaResponse capResponse = EmailHelpers.ValidateCaptcha(Request["g-recaptcha-response"], Server);
+            if (!capResponse.Success) return Content("Error From Google ReCaptcha : " + capResponse.ErrorMessage[0].ToString());
+
             ViewBag.OgPageUrl = "LiitySkepsiksenJaseneksi";
             if (!ModelState.IsValid) {
                 ModelState.AddModelError("", "Nimi, katuosoite, postinumero ja postitoimipaikka ovat pakollisia tietoja.");
