@@ -66,7 +66,7 @@ namespace SkepsisWeb.Controllers {
             ViewBag.OgPageUrl = "AnnaPalautetta";
             return View(new Feedback());
         }
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken()]
         public ActionResult AnnaPalautetta(Feedback feedback) {
             ViewBag.OgPageUrl = "AnnaPalautetta";
             if (!ModelState.IsValid) {
@@ -90,7 +90,7 @@ namespace SkepsisWeb.Controllers {
             ViewBag.OgPageUrl = "LiitySkepsiksenJaseneksi";
             return View(new Member());
         }
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken()]
         public ActionResult LiitySkepsiksenJaseneksi(Member member) {
             ViewBag.OgPageUrl = "LiitySkepsiksenJaseneksi";
             if (!ModelState.IsValid) {

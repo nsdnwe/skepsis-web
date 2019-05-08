@@ -17,6 +17,7 @@
         } else {
             @Html.Partial("_ValidationSummary")
             <form id="my-form" class="bs-example form-horizontal" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
                 <fieldset>
                     <div class="form-group">
                         <label for="inputUserName" class="col-lg-2 control-label">Nimi</label>
