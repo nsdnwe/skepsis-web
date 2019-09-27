@@ -26,7 +26,7 @@ namespace SkepsisWeb.Controllers {
             vm.MagazineViewModel = new MagazineViewModel();
             vm.MagazineViewModel.Magazine = db.Magazines.Where(z => z.Enabled).OrderByDescending(z => z.MagazineID).First();
             string magazineID = vm.MagazineViewModel.Magazine.MagazineID;
-            vm.MagazineViewModel.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID == magazineID).ToList();
+            vm.MagazineViewModel.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID == magazineID).OrderBy(z => z.Rank).ThenBy(z => z.ID).ToList();
 
             return View(vm);
         }
@@ -191,7 +191,7 @@ namespace SkepsisWeb.Controllers {
             var res = new MagazinesViewModel();
             res.Year = id;
             res.Magazines = db.Magazines.Where(z => z.MagazineID.StartsWith(id.ToString()) && z.Enabled).ToList();
-            res.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID.StartsWith(id.ToString())).ToList();
+            res.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID.StartsWith(id.ToString())).OrderBy(z => z.Rank).ThenBy(z => z.ID).ToList();
             return View(res);
         }
         public ActionResult Artikkelit() {

@@ -10,5 +10,6 @@ namespace SkepsisWeb.Models {
         public string Author { get; set; }
         public string Title { get; set; }
         public string PdfFile { get; set; }
+        public int Rank { get; set; }
     }
 }
