@@ -68,7 +68,7 @@ Luotu (UTC): {5}",
         private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
             string apiKey = getEmailPassword(server);
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("no-reply@skepsis.fi", "Skepsis - Web-sivusto");
+            var from = new EmailAddress("no-reply@nsd.fi", "Skepsis - Web-sivusto");
             List<EmailAddress> to = new List<EmailAddress>();
             string[] emailTos = emailTo.Trim().Replace("; ", ";").Replace(';', ',').Split(',');
             foreach (var item in emailTos) {
