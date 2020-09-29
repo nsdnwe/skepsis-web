@@ -8,6 +8,8 @@ using System.Web;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
 
 
 // NuGet: SendGrid
@@ -65,19 +67,34 @@ Luotu (UTC): {5}",
         //} 
 
         // emailTo in format "niko.wessman@nsd.fi,secretary@skepsis.fi"
+        //private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
+        //    string apiKey = getEmailPassword(server);
+        //    var client = new SendGridClient(apiKey);
+        //    var from = new EmailAddress("no-reply@nsd.fi", "Skepsis - Web-sivusto");
+        //    List<EmailAddress> to = new List<EmailAddress>();
+        //    string[] emailTos = emailTo.Trim().Replace("; ", ";").Replace(';', ',').Split(',');
+        //    foreach (var item in emailTos) {
+        //        to.Add(new EmailAddress(item));
+        //    }
+        //    var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, "", html);
+        //    client.SendEmailAsync(msg);
+        //}
         private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
-            string apiKey = getEmailPassword(server);
-            var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("no-reply@nsd.fi", "Skepsis - Web-sivusto");
-            List<EmailAddress> to = new List<EmailAddress>();
-            string[] emailTos = emailTo.Trim().Replace("; ", ";").Replace(';', ',').Split(',');
-            foreach (var item in emailTos) {
-                to.Add(new EmailAddress(item));
-            }
-            var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, "", html);
-            client.SendEmailAsync(msg);
-        }
+            var json = new JObject();
+            json.Add("system", "SKEPSIS");
+            json.Add("emailTo", emailTo);
+            json.Add("subject", subject);
+            json.Add("html", html);
+            json.Add("emailFrom", "no-reply@nsd.fi");
+            json.Add("emailFromName", "Skepsis - Web-sivusto");
 
+            var restClient = new RestClient("https://nsdmailjet.azurewebsites.net/api");
+            var restRequest = new RestRequest("/email", Method.POST);
+            restRequest.AddParameter("text/json", json, ParameterType.RequestBody);
+
+            var restResponse = restClient.Execute(restRequest);
+            if (restResponse.StatusCode.ToString() != "OK") throw new Exception("Error sending email");
+        }
 
         //private static void sendEmail(MailMessage msg, HttpServerUtilityBase server) {
         //    msg.From = new MailAddress("web-sivut@skepsis.fi");
