@@ -67,6 +67,19 @@
                 </tr>
                 <tr>
                     <td><a href="/SkeptikkoLehti/2020">2020</a></td>
+                    <td><a href="/SkeptikkoLehti/2021">2021</a></td>
+                    @if (DateTime.UtcNow.Year >= 2022) {
+                        <td><a href="/SkeptikkoLehti/2022">2022</a></td>
+                    }
+                    @if (DateTime.UtcNow.Year >= 2023) {
+                        <td><a href="/SkeptikkoLehti/2023">2023</a></td>
+                    }
+                    @if (DateTime.UtcNow.Year >= 2024) {
+                        <td><a href="/SkeptikkoLehti/2024">2024</a></td>
+                    }
+                    @if (DateTime.UtcNow.Year >= 2025) {
+                        <td><a href="/SkeptikkoLehti/2025">2025</a></td>
+                    }
                 </tr>
             </tbody>
         </table>
