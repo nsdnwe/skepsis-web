@@ -85,7 +85,7 @@ Luotu (UTC): {5}",
             json.Add("emailTo", emailTo);
             json.Add("subject", subject);
             json.Add("html", html);
-            json.Add("emailFrom", "no-reply@nsd.fi");
+            json.Add("emailFrom", "no-reply@nsd.net");
             json.Add("emailFromName", "Skepsis - Web-sivusto");
 
             var restClient = new RestClient("https://nsdmailjet.azurewebsites.net/api");

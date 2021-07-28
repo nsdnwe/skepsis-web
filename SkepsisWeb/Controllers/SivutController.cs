@@ -9,8 +9,8 @@ using System.Web.Mvc;
 
 namespace SkepsisWeb.Controllers {
     public class SivutController : Controller {
-        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // "secretary@skepsis.fi,niko.wessman@nsd.fi";
-        private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.fi"; // 
+        private const string NEW_MEMBERSHIP_REQUEST_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.net"; // "secretary@skepsis.fi,niko.wessman@nsd.fi";
+        private const string FEEDBACK_EMAIL_ADDRESSES = "secretary@skepsis.fi,niko.wessman@nsd.net"; // 
 
         private DB db = new DB();
         public ActionResult Etusivu() {
@@ -231,7 +231,7 @@ namespace SkepsisWeb.Controllers {
         }
 
         public ActionResult Testing() {
-            //EmailHelpers.SendNewMemberEmail("Niko", "Niko.wessman@nsd.fi", Server);
+            //EmailHelpers.SendNewMemberEmail("Niko", "Niko.wessman@nsd.net", Server);
             return Content("Done");
         }
     }
