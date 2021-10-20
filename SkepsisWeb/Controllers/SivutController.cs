@@ -25,8 +25,15 @@ namespace SkepsisWeb.Controllers {
 
             vm.MagazineViewModel = new MagazineViewModel();
             vm.MagazineViewModel.Magazine = db.Magazines.Where(z => z.Enabled).OrderByDescending(z => z.MagazineID).First();
+            if (!string.IsNullOrEmpty(vm.MagazineViewModel.Magazine.MagazinePdfFileUrl)) vm.MagazineViewModel.Magazine.MagazinePdfFileUrl = vm.MagazineViewModel.Magazine.MagazinePdfFileUrl.Replace("https://skepsis.", "https://skepsisblob.");
+            if (!string.IsNullOrEmpty(vm.MagazineViewModel.Magazine.MagazineCoverImageUrl)) vm.MagazineViewModel.Magazine.MagazineCoverImageUrl = vm.MagazineViewModel.Magazine.MagazineCoverImageUrl.Replace("https://skepsis.", "https://skepsisblob.");
+
+
             string magazineID = vm.MagazineViewModel.Magazine.MagazineID;
             vm.MagazineViewModel.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID == magazineID).OrderBy(z => z.Rank).ThenBy(z => z.ID).ToList();
+            foreach (var item in vm.MagazineViewModel.MagazineArticles) {
+                if (!string.IsNullOrEmpty(item.PdfFile)) item.PdfFile = item.PdfFile.Replace("https://skepsis.", "https://skepsisblob.");
+            }
 
             return View(vm);
         }
@@ -191,7 +198,14 @@ namespace SkepsisWeb.Controllers {
             var res = new MagazinesViewModel();
             res.Year = id;
             res.Magazines = db.Magazines.Where(z => z.MagazineID.StartsWith(id.ToString()) && z.Enabled).ToList();
+            foreach (var item in res.Magazines) {
+                if (!string.IsNullOrEmpty(item.MagazinePdfFileUrl)) item.MagazinePdfFileUrl = item.MagazinePdfFileUrl.Replace("https://skepsis.", "https://skepsisblob.");
+                if (!string.IsNullOrEmpty(item.MagazineCoverImageUrl)) item.MagazineCoverImageUrl = item.MagazineCoverImageUrl.Replace("https://skepsis.", "https://skepsisblob.");
+            }
             res.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID.StartsWith(id.ToString())).OrderBy(z => z.Rank).ThenBy(z => z.ID).ToList();
+            foreach (var item in res.MagazineArticles) {
+                if (!string.IsNullOrEmpty(item.PdfFile)) item.PdfFile = item.PdfFile.Replace("https://skepsis.", "https://skepsisblob.");
+            }
             return View(res);
         }
         public ActionResult Artikkelit() {
