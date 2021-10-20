@@ -201,6 +201,7 @@ namespace SkepsisWeb.Controllers {
             foreach (var item in res.Magazines) {
                 if (!string.IsNullOrEmpty(item.MagazinePdfFileUrl)) item.MagazinePdfFileUrl = item.MagazinePdfFileUrl.Replace("https://skepsis.", "https://skepsisblob.");
                 if (!string.IsNullOrEmpty(item.MagazineCoverImageUrl)) item.MagazineCoverImageUrl = item.MagazineCoverImageUrl.Replace("https://skepsis.", "https://skepsisblob.");
+
             }
             res.MagazineArticles = db.MagazineArticles.Where(z => z.MagazineID.StartsWith(id.ToString())).OrderBy(z => z.Rank).ThenBy(z => z.ID).ToList();
             foreach (var item in res.MagazineArticles) {
