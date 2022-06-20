@@ -18,7 +18,7 @@ namespace SkepsisWeb.Controllers {
 
             var vm = new IndexViewModel();
             var evd = DateTime.UtcNow.AddDays(-1);
-            vm.Articles = db.Articles.Where(z => !z.Deleted && z.PublishDatetime <= DateTime.UtcNow).OrderByDescending(z => z.PublishDatetime).Take(3).ToList();
+            vm.Articles = db.Articles.Where(z => !z.Deleted && z.PublishDatetime <= DateTime.UtcNow).OrderByDescending(z => z.PublishDatetime).Take(1).ToList(); // .Take(3)
             vm.PublicEvents = db.PublicEvents.Where(z => !z.Deleted && z.EventDatetime >= evd).OrderBy(z => z.EventDatetime).Take(3).ToList();
             vm.HuuhaaPrize = db.Prizes.Where(z => z.HuuhaaPrizeEnabled).OrderByDescending(z => z.PrizeID).First();
             vm.SokratesPrize = db.Prizes.Where(z => z.SokratesPrizeEnabled).OrderByDescending(z => z.PrizeID).First();
