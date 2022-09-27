@@ -2164,6 +2164,7 @@
     <Content Include="Views\Sivut\Yhteystiedot2.cshtml" />
     <Content Include="Views\Sivut\Yhteystiedot.cshtml" />
     <Content Include="Views\Sivut\IlpoVSalmiMuistokirjoitus.cshtml" />
+    <Content Include="Views\Sivut\EtusivuOld.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

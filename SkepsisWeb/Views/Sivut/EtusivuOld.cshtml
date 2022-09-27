@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Etusivu";
-    ViewBag.ogDescription = @"Skepsis ry on suomalaisten skeptikkojen vuonna 1987 perustama tieteellinen yhdistys. Skepsiksen sääntöjen mukaan yhdistyksen tarkoitus on edistää kriittistä ajattelua,  
-        kiisteltyjen tai erityisen poikkeuksellisten väitteiden tieteellistä tarkastelua ja keskustelua tieteelliseen maailmankuvaan liittyvistä tärkeistä aiheista.";
+    ViewBag.ogDescription = @"Skepsis ry on suomalaisten skeptikkojen vuonna 1987 perustama tieteellinen yhdistys. Skepsiksen sääntöjen mukaan yhdistyksen tarkoitus on edistää kriittistä ajattelua,
+kiisteltyjen tai erityisen poikkeuksellisten väitteiden tieteellistä tarkastelua ja keskustelua tieteelliseen maailmankuvaan liittyvistä tärkeistä aiheista.";
 }
 @using SkepsisWeb.Helpers
 @model SkepsisWeb.ViewModels.IndexViewModel
@@ -23,29 +23,17 @@
             Yhdistys on poliittisesti, aatteellisesti sekä uskonnollisesti sitoutumaton.
         </p>
     </div>
-    <div class="col-md-6 text-left">
-        <h1>Huuhaa- ja Sokrates-palkinnot</h1>
-        <p>2021 Skepsis ry ei myöntänyt Huuhaa- ja Sokrates-palkintoja.</p>
-
-        <h4>Huuhaa-palkinto @Model.HuuhaaPrize.PrizeID</h4>
-        <p>@Model.HuuhaaPrize.HuuhaaPrizeLead <b>@Model.HuuhaaPrize.HuuhaaPrizeTitle</b> @Model.HuuhaaPrize.HuuhaaPrizeSubTitle</p>
-        <p>Lue palkinnon perustelut <a href="/HuuhaaPalkinto/@Model.HuuhaaPrize.PrizeID">täältä.</a></p>
-
-        <h4>Sokrates-palkinto @Model.SokratesPrize.PrizeID</h4>
-        <p>@Model.SokratesPrize.SokratesPrizeLead <b>@Model.SokratesPrize.SokratesPrizeTitle</b> @Model.SokratesPrize.SokratesPrizeSubTitle</p>
-        <p>Lue palkinnon perustelut <a href="/SokratesPalkinto/@Model.SokratesPrize.PrizeID">täältä.</a></p>
+    <div class="col-md-6 second text-left">
+        <h1>Uutisia</h1>
+        @foreach (var item in Model.Articles) {
+            <a href="/Uutiset"><h4>@item.ArticleDatetime.ToString("dd.MM.yyyy") @item.Title</h4></a>
+            <p>@Html.FormatBody(item.Ingress)</p>
+            <div style="margin-bottom:20px"></div>
+        }
     </div>
-    @*<div class="col-md-6 second text-left">
-            <h1>Uutisia</h1>
-            @foreach (var item in Model.Articles) {
-                <a href="/Uutiset"><h4>@item.ArticleDatetime.ToString("dd.MM.yyyy") @item.Title</h4></a>
-                <p>@Html.FormatBody(item.Ingress)</p>
-                <div style="margin-bottom:20px"></div>
-            }
-        </div>*@
 </div>
 
-@*<div class="row">
+<div class="row">
     <div class="col-md-6 text-left">
         <h1>Huuhaa- ja Sokrates-palkinnot</h1>
         <p>2021 Skepsis ry ei myöntänyt Huuhaa- ja Sokrates-palkintoja.</p>
@@ -71,20 +59,21 @@
             <div style="margin-bottom:20px"></div>
         }
     </div>
-</div>*@
+</div>
 
 @Html.Partial("_Lehti", Model.MagazineViewModel)
 
 
 @*<p class="text-right" style="margin-right:20px">
-    <a href="http://get.adobe.com/fi/reader/">Lataa Adobe Reader tästä</a>
-</p>*@
+        <a href="http://get.adobe.com/fi/reader/">Lataa Adobe Reader tästä</a>
+    </p>*@
 
 <div class="row" style="margin-top:40px">
     <div class="col-md-6" style="text-align:left">
-        <h1>Kirja: Voiko se olla totta? <br/>Skeptisiä näkökulmia nykymenoon</h1>
+        <h1>Kirja: Voiko se olla totta? <br />Skeptisiä näkökulmia nykymenoon</h1>
         <div><i>Toimittanut Tiina Raevaara</i></div>
-        <p>Tiedon valtaväylällä on synkkiä
+        <p>
+            Tiedon valtaväylällä on synkkiä
             sivupolkuja. Internetin piti tuoda
             maailman kaikki tieto kaikkien
             ulottuville, mutta verkossa jylläävät
@@ -95,8 +84,9 @@
             tieto koskaan eksykään silmien eteen.
             Miten luotettavan tiedon voi löytää
             kokemusasiantuntijoiden ja tunteisiin
-            vetoavan populismin joukosta? </p>
-        
+            vetoavan populismin joukosta?
+        </p>
+
         <div style="margin-top: 30px">
             Tilaa <a href="https://www.ursa.fi/kauppa/tuote/voiko-se-olla-totta/">täältä</a> tai katso lisätietoja <a href="~/Jutut/ursa_vsot_mainos_A4.pdf" target="_blank">täältä</a>.
         </div>
