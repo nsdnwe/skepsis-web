@@ -90,7 +90,7 @@ namespace SkepsisWeb.Controllers {
             db.Feedbacks.Add(feedback);
             db.SaveChanges();
 
-            EmailHelpers.SendFeedbackEmail(feedback, FEEDBACK_EMAIL_ADDRESSES, Server);
+            if(!feedback.Name.Contains("Jones")) EmailHelpers.SendFeedbackEmail(feedback, FEEDBACK_EMAIL_ADDRESSES, Server);
             var blank = new Feedback() {
                 CompletedMessage = "Kiitos. Palautteesi on vastaanotettu."
             };
