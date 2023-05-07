@@ -32,14 +32,15 @@
 <body>
     <div id="fb-root"></div>
     <script>
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.8&appId=266338713768371";
-          fjs.parentNode.insertBefore(js, fjs);
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.8&appId=266338713768371";
+            fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v16.0&appId=266338713768371&autoLogAppEvents=1" nonce="7KaNXzcF"></script>*@
     <div id="wrapper">
         <div class="container">
             <header>
@@ -136,7 +137,7 @@
                     <p>Copyright @DateTime.UtcNow.Year Skepsis ry • Sivuston ylläpidosta vastaa <a href="http://www.digiahub.com">NSD Oy</a> </p>
                 </div>
                 @if (!string.IsNullOrEmpty(@ViewBag.OgPageUrl)) {
-                    <div style="float: right; margin: 4px 15px 0px 0px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.skepsis.fi/@ViewBag.OgPageUrl" >Tweet</a></div>
+                    <div style="float: right; margin: 4px 15px 0px 0px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.skepsis.fi/@ViewBag.OgPageUrl">Tweet</a></div>
                     <div style="float: right; margin: 4px 3px;" class="fb-like" data-href="http://www.skepsis.fi/@ViewBag.OgPageUrl" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
                 }
             </footer>
@@ -152,15 +153,17 @@
 
     <!-- Custom Js -->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-27605309-1', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-27605309-1', 'auto');
+        ga('send', 'pageview');
     </script>
     <!-- Twitter -->
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-   </body>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+</body>
 </html>
