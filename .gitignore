@@ -252,3 +252,5 @@ storage.key
 email.key
 email2.key
 RecaptchaPrivate.key
+MailjetApiKey.key
+MailjetApiSecret.key

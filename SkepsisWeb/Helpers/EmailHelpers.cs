@@ -10,6 +10,10 @@ using SendGrid.Helpers.Mail;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
+using Mailjet.Client;
+using Mailjet.Client.Resources;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 
 // NuGet: SendGrid
@@ -20,7 +24,8 @@ using RestSharp;
 
 namespace SkepsisWeb.Helpers {
     public static class EmailHelpers {
-        public static void SendNewMemberEmail(Member m, string toEmail, HttpServerUtilityBase server) {
+        public static void SendNewMemberEmail(Member m, string toEmail, HttpServerUtilityBase server)
+        {
 
             string template = string.Format(@"
 JÄSENHAKEMUS<br/>
@@ -42,7 +47,8 @@ Luotu (UTC): {9} ",
             processAndSendEmail(toEmail, subject, template, server);
         }
 
-        public static void SendFeedbackEmail(Feedback f, string toEmail, HttpServerUtilityBase server) {
+        public static void SendFeedbackEmail(Feedback f, string toEmail, HttpServerUtilityBase server)
+        {
 
             string template = string.Format(@"
 PALAUTE<br/>
@@ -79,21 +85,90 @@ Luotu (UTC): {5}",
         //    var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, "", html);
         //    client.SendEmailAsync(msg);
         //}
-        private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server) {
-            var json = new JObject();
-            json.Add("system", "SKEPSIS");
-            json.Add("emailTo", emailTo);
-            json.Add("subject", subject);
-            json.Add("html", html);
-            json.Add("emailFrom", "no-reply@nsd.net");
-            json.Add("emailFromName", "Skepsis - Web-sivusto");
+        private static void processAndSendEmail(string emailTo, string subject, string html, HttpServerUtilityBase server)
+        {
 
-            var restClient = new RestClient("https://nsdmailjet.azurewebsites.net/api");
-            var restRequest = new RestRequest("/email", Method.POST);
-            restRequest.AddParameter("text/json", json, ParameterType.RequestBody);
+            var email = new Email()
+            {
+                EmailFrom = "no-reply@nsd.net",
+                EmailFromName = "Skepsis - Web-sivusto",
+                EmailTo = emailTo,
+                Html = html,
+                Subject = subject,
+            };
+            Task.Run(() => sendMailAsync(email, server));
 
-            var restResponse = restClient.Execute(restRequest);
-            if (restResponse.StatusCode.ToString() != "OK") throw new Exception("Error sending email");
+            return;
+
+            // NsdMailjet is not in used any more
+
+            //var json = new JObject();
+            //json.Add("system", "SKEPSIS");
+            //json.Add("emailTo", emailTo);
+            //json.Add("subject", subject);
+            //json.Add("html", html);
+            //json.Add("emailFrom", "no-reply@nsd.net");
+            //json.Add("emailFromName", "Skepsis - Web-sivusto");
+
+            //var restClient = new RestClient("https://nsdmailjet.azurewebsites.net/api");
+            //var restRequest = new RestRequest("/email", Method.POST);
+            //restRequest.AddParameter("text/json", json, ParameterType.RequestBody);
+
+            //var restResponse = restClient.Execute(restRequest);
+            //if (restResponse.StatusCode.ToString() != "OK") throw new Exception("Error sending email");
+        }
+
+        private static async Task sendMailAsync(Email email, HttpServerUtilityBase server) {
+            MailjetClient client = new MailjetClient(getMailjetApiKey(server), getMailjetApiSecret(server)) { Version = ApiVersion.V3_1 };
+
+            string[] emailTos = email.EmailTo.Trim().Replace(", ", ",").Replace("; ", ";").Replace(';', ',').Split(',');
+            MailjetResponse response;
+            MailjetRequest request;
+
+            // Safety feature. Remove when sure all works
+            if (emailTos.Length >= 10) throw new Exception("Receiver count 10 or more");
+
+            var eTos = new JArray();
+            foreach (var item in emailTos) {
+                var jObj = new JObject();
+                jObj.Add(new JProperty("Email", item));
+                jObj.Add(new JProperty("Name", item));
+                eTos.Add(jObj);
+            }
+
+            request = new MailjetRequest { Resource = Send.Resource }
+               .Property(Send.Messages, new JArray {
+                        new JObject {
+                            {"From", new JObject {
+                            {"Email", email.EmailFrom},
+                            {"Name", email.EmailFromName}
+                        }},
+                        {"To", eTos },
+                        {"Subject", email.Subject},
+                        {"HTMLPart", email.Html}
+                   }
+            });
+
+            var startTime = DateTime.UtcNow;
+            response = await client.PostAsync(request);
+            var duration = DateTime.UtcNow - startTime;
+
+            //System.Threading.Thread.Sleep(1000);
+
+            if (response.IsSuccessStatusCode) {
+                Debug.WriteLine(string.Format("Total: {0}, Count: {1}\n", response.GetTotal(), response.GetCount()));
+                Debug.WriteLine(response.GetData());
+                email.Status = "OK";
+                email.ErrorDescription = duration.TotalSeconds.ToString();
+            } else {
+                Debug.WriteLine(string.Format("StatusCode: {0}\n", response.StatusCode));
+                Debug.WriteLine(string.Format("ErrorInfo: {0}\n", response.GetErrorInfo()));
+                Debug.WriteLine(response.GetData());
+                Debug.WriteLine(string.Format("ErrorMessage: {0}\n", response.GetErrorMessage()));
+                email.Status = "ERROR";
+                email.ErrorDescription = response.GetErrorMessage() + " " + response.GetErrorInfo().ToString() + " Status code: " + response.StatusCode.ToString();
+                throw new Exception("ERROR");
+            }
         }
 
         //private static void sendEmail(MailMessage msg, HttpServerUtilityBase server) {
@@ -116,6 +191,29 @@ Luotu (UTC): {5}",
         //    var transportWeb = new Web(credentials);
         //    transportWeb.DeliverAsync(message);
         //}
+
+        public static string getMailjetApiKey(HttpServerUtilityBase server)
+        {
+            // Try is local
+            try {
+                return System.IO.File.ReadAllText(server.MapPath(@"~/MailjetApiKey.key"));
+            }
+            catch {
+                // I guess we are in Azure
+                return Environment.GetEnvironmentVariable("MAILJET_API_KEY").ToString();
+            }
+        }
+        public static string getMailjetApiSecret(HttpServerUtilityBase server)
+        {
+            // Try is local
+            try {
+                return System.IO.File.ReadAllText(server.MapPath(@"~/MailjetApiSecret.key"));
+            }
+            catch {
+                // I guess we are in Azure
+                return Environment.GetEnvironmentVariable("MAILJET_API_SECRET").ToString();
+            }
+        }
 
         public static string getEmailPassword(HttpServerUtilityBase server) {
             // Try is local
